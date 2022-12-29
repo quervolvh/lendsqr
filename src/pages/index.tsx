@@ -1,11 +1,19 @@
-import { MetaHead } from '../components/MetaHead'
+import { LandingLayout } from 'layout/LandingLayout'
 
 export default function Home() {
   return (
-    <>
 
-      <MetaHead />
+    <LandingLayout
 
-    </>
+      headTitle='Lendsqr'
+      isMobile={false}
+      deviceWidth={1200}
+
+    >
+
+      <></>
+
+    </LandingLayout>
+
   )
 }
