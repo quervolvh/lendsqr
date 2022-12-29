@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #213F7D;
+}
+
+$colors: (
+  primary: #213F7D,
+  secondary: #545F7D,
+  tertiary: #39CDCC
+);
+
+$card-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+
+$main-font: 'work-sans', sans-serif;
+
+$default-font-size: 14px;
+
+$inputBorder: 2px solid rgba(84, 95, 125, 0.15);
+
+$normal-font-sizes: (
+  xx-small: 9px,
+  x-small: 12px,
+  small: 14px,
+  regular: 16px,
+  medium: 18px,
+  large: 22.5px,
+  m-large: 26px,
+  x-large: 35px,
+  xx-large: 40px,
+  xxx-large: 50px
+);
+
+$small-font-sizes: (
+  xx-small: 8px,
+  x-small: 10px,
+  small: 12.5px,
+  regular: 14px,
+  medium: 16px,
+  large: 20.5px,
+  m-large: 25.5px,
+  x-large: 29.5px,
+  xx-large: 32px,
+  xxx-large: 40px
+);
+
+$small-tab-font-sizes: (
+  xx-small: 7px,
+  x-small: 9px,
+  small: 11px,
+  regular: 12.5px,
+  medium: 14px,
+  large: 16px,
+  m-large: 21px,
+  x-large: 24px,
+  xx-large: 30px,
+  xxx-large: 37px
+);
+
+$font-weights: (
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  black: 900
+);
