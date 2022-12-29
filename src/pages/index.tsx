@@ -5,13 +5,13 @@ export default function Home() {
 
     <LandingLayout
 
-      headTitle='Lendsqr'
+      headTitle='Lendsqr - Sign in'
       isMobile={false}
       deviceWidth={1200}
 
     >
 
-      <></>
+    
 
     </LandingLayout>
 

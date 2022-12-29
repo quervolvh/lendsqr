@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import '../assets/styles/main.scss';
+import 'assets/styles/main.scss';
 import { change, resizer } from 'utils';
 import type { AppProps } from 'next/app';
 

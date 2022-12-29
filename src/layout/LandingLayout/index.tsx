@@ -12,7 +12,7 @@ export const LandingLayout: React.FC<Props> = ({
             <MetaHead
                 title={headTitle}
             />
-            <div className={classnames('landingLayout', className)}>
+            <div className={classnames('LandingLayout', className)}>
 
                 <div className="landingLayout-body">
                     {props.children}

@@ -1,0 +1,9 @@
+//1. Configurations and helpers
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Base
+@import 'base/base';
+
+//3. Layout
+@import "./layout/LandingLayout";
