@@ -1,0 +1,22 @@
+.auth {
+
+    padding-top: 90px;
+
+    &-title {
+
+        @include font-size(xx-large);
+        margin-bottom: 10px;
+        color: color(primary);
+        font-weight: 700;
+        font-family: $aux-font;
+
+    }
+
+    &-subtitle {
+
+        @include font-size(large);
+        font-weight: 300;
+
+    }
+
+}

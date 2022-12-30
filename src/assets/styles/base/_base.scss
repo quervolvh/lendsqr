@@ -22,7 +22,8 @@ body {
   overflow-x: hidden;
   line-height: 1.4;
   font-family: $main-font;
-  color: color(dark);
+  font-weight: 400;
+  color: color(secondary);
 }
 
 #__next {
@@ -55,19 +56,6 @@ a {
   cursor: pointer;
 }
 
-.no-action {
-  opacity: 0.6;
-  color: color(empty-item);
-}
-
 input {
   -webkit-appearance: none;
-}
-
-.no-select {
-  user-select: none;
-}
-
-.no-bg {
-  background: none !important;
 }

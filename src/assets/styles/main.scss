@@ -1,10 +1,16 @@
-//1. Configurations and helpers
+//1. Variables & mixins
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
-@import 'abstracts/extends';
 
-// 2. Base
+//2. Configurations and helpers
+@import 'abstracts/extends';
+@import 'abstracts/functions';
+
+// 3. Base
 @import 'base/base';
 
-//3. Layout
+//4. Layout
 @import "./layout/LandingLayout";
+
+//5. Pages
+@import "./pages/auth";

@@ -11,6 +11,7 @@ $colors: (
 $card-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
 
 $main-font: 'work-sans', sans-serif;
+$aux-font: 'avenir-next', sans-serif;
 
 $default-font-size: 14px;
 
@@ -22,8 +23,8 @@ $normal-font-sizes: (
   small: 14px,
   regular: 16px,
   medium: 18px,
-  large: 22.5px,
-  m-large: 26px,
+  large: 20px,
+  m-large: 22px,
   x-large: 35px,
   xx-large: 40px,
   xxx-large: 50px
@@ -35,8 +36,8 @@ $small-font-sizes: (
   small: 12.5px,
   regular: 14px,
   medium: 16px,
-  large: 20.5px,
-  m-large: 25.5px,
+  large: 18px,
+  m-large: 20px,
   x-large: 29.5px,
   xx-large: 32px,
   xxx-large: 40px
@@ -49,7 +50,7 @@ $small-tab-font-sizes: (
   regular: 12.5px,
   medium: 14px,
   large: 16px,
-  m-large: 21px,
+  m-large: 18px,
   x-large: 24px,
   xx-large: 30px,
   xxx-large: 37px

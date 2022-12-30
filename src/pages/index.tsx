@@ -8,10 +8,14 @@ export default function Home() {
       headTitle='Lendsqr - Sign in'
       isMobile={false}
       deviceWidth={1200}
-
     >
 
-    
+    <div className='auth'>
+
+      <h1 className='auth-title'> Welcome! </h1>
+      <p className='auth-subtitle'> Enter details to login. </p>
+
+    </div>
 
     </LandingLayout>
 
