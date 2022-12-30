@@ -3,6 +3,16 @@ const path = require('path');
 
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   webpack: config => {
     config.resolve.modules.push(path.resolve('./src'));
     config.module.rules.push(
@@ -14,7 +24,7 @@ const nextConfig = {
             options: {
               limit: 1000000
             }
-          }
+          },
         }
       ]
     );

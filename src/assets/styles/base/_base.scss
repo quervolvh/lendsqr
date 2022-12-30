@@ -12,15 +12,21 @@
 
 html {
   font-size: 62.5%;
+  min-height: 100vh;
 }
 
 body {
   @include font-size(regular);
   box-sizing: border-box;
+  min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.4;
   font-family: $main-font;
   color: color(dark);
+}
+
+#__next {
+  min-height: 100vh;
 }
 
 h1 {
@@ -46,7 +52,7 @@ a {
 }
 
 [role='button'] {
-  cursor: default;
+  cursor: pointer;
 }
 
 .no-action {
