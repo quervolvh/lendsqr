@@ -1,47 +1,30 @@
-import { Button } from 'components'
-import { FormField } from 'components/FormField'
+import { Login } from 'common/auth/Login'
 import { LandingLayout } from 'layout/LandingLayout'
 
-export default function Home() {
+export const Home: React.FC<Props> = ({ isMobile, deviceWidth }) => {
+
   return (
 
     <LandingLayout
-
       headTitle='Lendsqr - Sign in'
-      isMobile={false}
-      deviceWidth={1200}
+      isMobile={isMobile}
+      deviceWidth={deviceWidth}
     >
 
-      <div className='auth'>
-
-        <h1 className='auth-title'> Welcome! </h1>
-        <p className='auth-subtitle'> Enter details to login. </p>
-
-        <div className='auth-form'>
-
-          <FormField placeHolder={"Email"} />
-
-          <FormField placeHolder={"Password"} type={"password"} />
-
-          <p
-
-            className='auth-forgot-password-switch'
-
-            role={"button"}
-
-          >
-
-            FORGOT PASSWORD?
-
-          </p>
-
-          <Button label='LOG IN' />
-
-        </div>
-
-      </div>
+      <Login />
 
     </LandingLayout>
 
   )
+
+}
+
+export default Home;
+
+interface Props {
+
+  isMobile: boolean,
+
+  deviceWidth: number
+
 }
