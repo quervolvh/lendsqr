@@ -45,6 +45,8 @@ export const LandingLayout: React.FC<Props> = ({
 
                     <Image
 
+                        className='LandingLayout-banner'
+
                         src={images.lendsqr_landing}
 
                         alt={"Sign up"}

@@ -8,12 +8,8 @@
     padding: 0 62px;
   }
 
-  @include media-query(mobile) {
-    padding: 0 62px;
-  }
-
   @include media-query('small-tablet') {
-    padding: 0 62px;
+    padding: 0 20px;
   }
 
   @include media-query('mobile') {
@@ -21,9 +17,12 @@
     padding: 0 20px;
   }
 
+  @include media-query(non-mobile) {
+    padding-right: 0 !important;
+  }
+
   margin: auto;
   padding: 0 106px;
-  padding-right: 0 !important;
   max-width: 3000px;
 }
 

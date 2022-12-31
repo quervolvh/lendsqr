@@ -1,10 +1,22 @@
 .LandingLayout {
 
     @extend %body-width-and-padding;
+    @include media-query(mobile) {
+
+        flex-direction: column;
+
+    }
+
     display: flex;
     min-height: 100vh;
     
     &-lendsqr {
+
+        @include media-query(mobile) {
+
+            margin-bottom: 0;
+
+        }
 
         display: block;
         margin-bottom: 139px;
@@ -15,7 +27,17 @@
     &-right {
 
         @extend %body-padding-vertical;
+        @include media-query(mobile) {
+
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 450px;
+
+        }
+
         width: 50%;
+        transition: 0.2s ease;
 
         img {
 
@@ -25,10 +47,85 @@
 
     }
 
+    &-left {
+
+        @include media-query(tablet) {
+
+            padding-left: 0;
+            padding-right: 10px;
+            width: 40%;
+
+        }
+
+        @include media-query(small-tablet) {
+
+            width: 30%;
+
+        }
+
+    }
+
+    &-banner {
+
+        
+
+        @include media-query(tablet) {
+
+            width: 300px;
+            height: 300px;
+
+        }
+
+        @include media-query(small-tablet) {
+
+            width: 200px;
+            height: 200px;
+
+        }
+        
+        @include media-query(mobile) {
+
+            display: none;
+    
+        }
+
+    }
+
     &-right {
 
         @extend %body-padding-horizontal;
+
+        @include media-query(tablet) {
+
+            width: 60%;
+
+        }
+
+        @include media-query(small-tablet) {
+
+            width: 70%;
+
+        }
+
+        @include media-query(mobile) {
+
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.12);
+            padding-top: 70px;
+            padding-bottom: 70px;
+    
+        }
+
+        @media only screen and (min-width: 470px) and (max-width: 600px) {
+
+            padding-left: 30px;
+            padding-right: 30px;
+
+        }
+        
         box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+
 
     }
 
