@@ -5,7 +5,10 @@
 $colors: (
   primary: #213F7D,
   secondary: #545F7D,
-  tertiary: #39CDCC
+  tertiary: #39CDCC,
+  clearWhite: #fff,
+  error-item: #f36b7f,
+  input-border: rgba(84, 95, 125, 0.15)
 );
 
 $card-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
@@ -15,7 +18,7 @@ $aux-font: 'avenir-next', sans-serif;
 
 $default-font-size: 14px;
 
-$inputBorder: 2px solid rgba(84, 95, 125, 0.15);
+$inputBorder: 2px solid map-get($colors , input-border);
 
 $normal-font-sizes: (
   xx-small: 9px,

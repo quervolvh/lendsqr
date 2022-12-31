@@ -19,4 +19,21 @@
 
     }
 
+    &-form {
+
+        margin-top: 60px;
+        max-width: 447px;
+
+    }
+
+    &-forgot-password-switch {
+
+        @include font-size(x-small);
+        color: color(tertiary);
+        font-family: $aux-font;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+
+    }
+
 }

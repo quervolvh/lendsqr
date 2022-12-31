@@ -1,0 +1,119 @@
+.form-field {
+  @extend .strickFadeIn;
+  position: relative;
+  margin-bottom: 24px;
+
+  &.title-left {
+    .form-field-title {
+      text-align: left;
+    }
+  }
+
+  p,
+  &-title {
+    @include font-size(small);
+    margin: 10px 0;
+  }
+
+  input {
+    @include font-size(small);
+    outline: none;
+    border-radius: 5px;
+    border: $inputBorder;
+    padding: 17.5px 16px;
+    width: 100%;
+    height: 52.5px;
+    resize: none;
+    background: color(clearWhite);
+    color: transparentize( color(secondary) , 0.2);
+    line-height: 1.8;
+    letter-spacing: 1.1px;
+    font-family: $aux-font;
+    transition: color 0.2s, background 0.2s;
+    transition-timing-function: ease;
+
+    &:read-only {
+      background-color: lighten(color(secondary), 65);
+    }
+
+    &:focus {
+      border: $inputBorder;
+    }
+  }
+
+  &.with-password input {
+    padding-right: 52px;
+  }
+
+  ::placeholder,
+  &-placeholder {
+    @extend %form-placeholder;
+  }
+
+  &-password-toggle {
+    
+    @include font-size(small);
+    color: color(tertiary);
+    font-family: $aux-font;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+
+    &-box {
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      padding-right: 17px;
+      height: 100%;
+
+    }
+
+  }
+
+  &-error {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    max-height: 0 !important;
+    overflow: hidden;
+    color: color(error-item);
+    transition: 0.2s ease;
+
+    span {
+      display: none;
+    }
+
+    &-v {
+      padding-top: 20px;
+      max-height: 100px;
+      overflow: unset;
+
+      span {
+        display: block;
+      }
+    }
+
+  }
+
+  &-blank {
+    input {
+      @include media-query(mobile) {
+        text-align: center;
+      }
+
+      @include font-size(medium);
+      background: transparent !important;
+      color: color(secondary);
+    }
+  }
+}
+
+.form-field-placeholder span {
+  @include font-size(small);
+  width: 100%;
+  text-align: left;
+  font-weight: 300;
+  color: color(secondary);
+}

@@ -3,14 +3,20 @@
 @import 'abstracts/mixins';
 
 //2. Configurations and helpers
-@import 'abstracts/extends';
 @import 'abstracts/functions';
+@import 'abstracts/extends';
 
-// 3. Base
+//3. Base
 @import 'base/base';
 
-//4. Layout
-@import "./layout/LandingLayout";
+//4. Transition
+@import 'transitions/fadeIn';
 
-//5. Pages
-@import "./pages/auth";
+//5. Components
+@import "components/form-field/index";
+
+//6. Layout
+@import "layout/LandingLayout";
+
+//7. Pages
+@import "pages/auth";
