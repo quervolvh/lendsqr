@@ -24,7 +24,7 @@
     width: 100%;
     height: 52.5px;
     resize: none;
-    background: color(clearWhite);
+    background: color(clear-white);
     color: transparentize( color(secondary) , 0.2);
     line-height: 1.8;
     letter-spacing: 1.1px;
@@ -52,7 +52,7 @@
 
   &-password-toggle {
     
-    @include font-size(small);
+    @include font-size-override(x-small);
     color: color(tertiary);
     font-family: $aux-font;
     font-weight: 600;

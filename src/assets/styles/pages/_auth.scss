@@ -29,6 +29,7 @@
     &-forgot-password-switch {
 
         @include font-size(x-small);
+        margin-bottom: 30px;
         color: color(tertiary);
         font-family: $aux-font;
         font-weight: 600;

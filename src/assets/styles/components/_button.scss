@@ -1,0 +1,65 @@
+.button {
+  @include media-query(small-tablet) {
+    padding: 9px 19px;
+  }
+
+  @media only screen and (max-width: 1400px) {
+    @include font-size(small);
+    padding: 14px 25px;
+  }
+
+  @include font-size(regular);
+  border-radius: 8px;
+  border: 2px solid color(tertiary);
+  padding: 14.5px 31px;
+  width: 100%;
+  background: color(tertiary);
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  color: color(clear-white);
+  transition-duration: 0.2s;
+  transition-property: color, background, transform;
+  transition-timing-function: ease;
+
+  &.no-bg {
+    background: transparent;
+    color: color(primary);
+
+    &-dark {
+      background: transparent;
+      color: unset;
+    }
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &.smallText {
+    @include font-size(small);
+  }
+
+  &.transparent {
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &:hover {
+    border-color: darken(color(tertiary), 5);
+    background: darken(color(tertiary), 5);
+    transform: translate(0, -2px);
+  }
+
+  &:disabled {
+    background: color(tertiary);
+  }
+
+  &:disabled:hover {
+    background: darken(color(tertiary), 10);
+  }
+
+}

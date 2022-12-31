@@ -1,3 +1,4 @@
+import { Button } from 'components'
 import { FormField } from 'components/FormField'
 import { LandingLayout } from 'layout/LandingLayout'
 
@@ -33,6 +34,8 @@ export default function Home() {
             FORGOT PASSWORD?
 
           </p>
+
+          <Button label='LOG IN' />
 
         </div>
 
