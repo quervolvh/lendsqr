@@ -9,7 +9,8 @@ $colors: (
   clear-white: #fff,
   error-item: #f36b7f,
   input-border: rgba(84, 95, 125, 0.15),
-  background: #FBFBFB
+  background: #FBFBFB,
+  card-bg: transparentize(#DF18FF , 0.9)
 );
 
 $card-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
@@ -29,6 +30,7 @@ $normal-font-sizes: (
   medium: 18px,
   large: 20px,
   m-large: 22px,
+  n-large: 24px,
   x-large: 35px,
   xx-large: 40px,
   xxx-large: 50px
@@ -42,6 +44,7 @@ $small-font-sizes: (
   medium: 16px,
   large: 18px,
   m-large: 20px,
+  n-large: 22px,
   x-large: 29.5px,
   xx-large: 32px,
   xxx-large: 40px
@@ -55,6 +58,7 @@ $small-tab-font-sizes: (
   medium: 14px,
   large: 16px,
   m-large: 18px,
+  n-large: 20px,
   x-large: 24px,
   xx-large: 30px,
   xxx-large: 37px

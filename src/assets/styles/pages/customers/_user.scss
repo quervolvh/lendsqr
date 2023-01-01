@@ -1,0 +1,29 @@
+.customers-user {
+
+    &-summary {
+
+        display: flex;
+        
+
+        .summary-card-small {
+
+            margin: 0 auto;
+            width: 23%;
+
+            &:first-child {
+
+                margin-left: 0;
+
+            }
+
+            &:last-child {
+
+                margin-right: 0;
+
+            }
+
+        }
+
+    }
+
+}

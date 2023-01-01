@@ -15,6 +15,7 @@
 //5. Components
 @import "components/button";
 @import "components/form-field/index";
+@import "components/summary-card";
 
 //6. Layout
 @import "layout/LandingLayout";
@@ -22,3 +23,4 @@
 
 //7. Pages
 @import "pages/auth";
+@import "pages/customers/user";
