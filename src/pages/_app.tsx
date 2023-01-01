@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import 'assets/styles/main.scss';
 import { change, resizer } from 'utils';
 import type { AppProps } from 'next/app';
+import { SetClientAvailability } from 'hooks/useIsClient';
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -82,6 +83,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
     //eslint-disable-next-line
   }, [clientMode]);
+
+  SetClientAvailability((e) => change(e, "clientMode", setState));
 
   return (
 

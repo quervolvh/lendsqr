@@ -72,6 +72,55 @@
 
   }
 
+  &.with-button {
+
+    @include media-query(mobile) {
+      flex-direction: column;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 8px;
+    border: 1px solid transparentize(color(primary), 0.8);
+    background: white;
+
+    input {
+      border: 0;
+      padding: 8px 20px;
+      height: unset;
+      background: transparent;
+    }
+
+    button {
+      
+      @include media-query(non-mobile) {
+
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 9px 21px !important;
+
+      }
+
+      @include media-query(mobile) {
+        margin: 20px auto;
+      }
+
+      max-width: max-content;
+    }
+
+    & .form-field-error {
+      @include media-query(mobile) {
+        position: unset;
+        margin: auto;
+      }
+      position: absolute;
+      bottom: -25px;
+    }
+  }
+
   &-error {
     display: flex;
     align-items: center;

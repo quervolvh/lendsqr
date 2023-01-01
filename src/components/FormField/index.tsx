@@ -33,5 +33,6 @@ interface Props {
     errorClass?: string,
     onClick?(): void ,
     onFocus?: () => void,
-    onBlur?: () => void
+    onBlur?: () => void,
+    withButton?: { label?: string, onClick?(): void, className?: string, disabled?: boolean, vectorIcon?: string },
 }

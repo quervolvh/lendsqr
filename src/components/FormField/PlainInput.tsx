@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'components/Button';
 import { classnames } from 'utils/index';
 import { FormError } from './FormError';
 
@@ -12,6 +13,7 @@ export const PlainInput: React.FC<Props> = (
         placeHolder,
         className = '',
         errorClass = "-",
+        withButton,
         ...props
     }
 ) => {
@@ -48,6 +50,18 @@ export const PlainInput: React.FC<Props> = (
 
     const errorOutput = errorText();
 
+    const ButtonAddOn = ({ ...buttonProps }) => (
+
+        <Button
+            label={buttonProps?.label}
+            onClick={() => buttonProps.onClick && buttonProps.onClick()}
+            disabled={buttonProps.disabled}
+            className={buttonProps.className || ""}
+            vectorIcon={withButton?.vectorIcon}
+        />
+
+    );
+
     return (
         <div
             className={
@@ -55,6 +69,7 @@ export const PlainInput: React.FC<Props> = (
                     'form-field',
                     className,
                     type === 'password' && 'with-password',
+                    withButton ? "with-button" : ''
                 )}
         >
 
@@ -111,6 +126,8 @@ export const PlainInput: React.FC<Props> = (
                 className={classnames(errorClass, errorTextClass() && errorTextClass())}
             />
 
+            {withButton && <ButtonAddOn  {...withButton} />}
+
         </div>
     );
 };
@@ -127,6 +144,7 @@ interface Props {
     disabled?: boolean,
     readonly?: boolean,
     error?: boolean | string,
+    withButton?: { label: string, onClick?(): void, className?: string, disabled?: boolean , vectorIcon?: string },
     onKeyDown?(e: React.KeyboardEvent): void,
     onFocus?: () => void,
     onBlur?: () => void

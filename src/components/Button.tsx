@@ -7,13 +7,21 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   disabled,
   color,
+  vectorIcon,
+  vectorIconClass
 }) => {
 
   const ButtonTitle = () => {
     return (
-      <span className={classnames("button-title")}>
-        <span className={color || ""}> {label || "button"} </span>
-      </span>
+      <>
+        {(!vectorIcon && label) &&
+
+          <span className={classnames("button-title")}>
+            <span className={color || ""}> {label || "button"} </span>
+          </span>
+
+        }
+      </>
     );
   };
 
@@ -39,6 +47,18 @@ export const Button: React.FC<ButtonProps> = ({
 
       <ButtonTitle />
 
+      {vectorIcon &&
+
+        <div
+
+          className={classnames('button-svg', vectorIconClass)}
+
+          dangerouslySetInnerHTML={{ __html: vectorIcon }}
+
+        />
+
+      }
+
     </button>
   );
 
@@ -50,4 +70,6 @@ interface ButtonProps {
   className?: string,
   disabled?: boolean,
   color?: string,
+  vectorIcon?: string,
+  vectorIconClass?: string
 }
