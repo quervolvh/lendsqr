@@ -9,6 +9,7 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
       displayTitle='User'
       isMobile={isMobile}
       deviceWidth={deviceWidth}
+      active={"customers"}
     >
 
      <></>

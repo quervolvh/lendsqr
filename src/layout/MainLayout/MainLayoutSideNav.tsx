@@ -12,14 +12,14 @@ const MainLayoutSideNav: React.FC<{ active?: string }> = ({ active }) => {
 
                 {SIDENAVLINKS.map((item, index) => {
 
-                    const activeItem = active?.toLocaleLowerCase() || "";
+                    const activeLink = active?.toLocaleLowerCase() || "";
 
-                    const isActive = `/${activeItem}` === String(item.link).toLowerCase();
+                    console.log(activeLink )
 
                     return (
 
                         <div
-                            className={classnames("main-layout-sideNav-item", isActive && "active")}
+                            className={classnames("main-layout-sideNav-item")}
                             key={`side-nav-item-${index}`}>
 
                             {item.title && item.type === "side-nav-item-block" &&
@@ -28,31 +28,31 @@ const MainLayoutSideNav: React.FC<{ active?: string }> = ({ active }) => {
 
                                     <LinkWrapper link={item.link}>
 
-                                        <p className='"main-layout-sideNav-item-block-title'> {item.title} </p>
+                                        <p className='main-layout-sideNav-item-block-title'> {item.title} </p>
 
                                     </LinkWrapper>
 
                                     <div className='main-layout-sideNav-item-block-links'>
 
-                                        {item.links.map((item) =>
+                                        {item.links.map((link_item) =>
 
                                             <LinkWrapper
-                                                className={isActive ? 'active' : ''}
-                                                link={item.link === "/logout" ? '' : item.link}
-                                                key={`side-nav-item-${index}-${item.title}`}
+                                                className={`/${activeLink}` === link_item.link ? 'active' : ''}
+                                                link={item.link === "/logout" ? '' : link_item.link}
+                                                key={`side-nav-item-${index}-${link_item.title}`}
                                             >
 
                                                 <>
 
                                                     <div
 
-                                                        dangerouslySetInnerHTML={{ __html: item.icon }}
+                                                        dangerouslySetInnerHTML={{ __html: link_item.icon }}
 
                                                         className="bulb"
 
                                                     />
 
-                                                    <span> {item.title} </span>
+                                                    <span> {link_item.title} </span>
 
                                                 </>
 

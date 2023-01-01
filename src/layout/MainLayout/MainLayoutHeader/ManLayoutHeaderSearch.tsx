@@ -10,7 +10,9 @@ export const MainLayoutHeaderSearch : React.FC<Props> = ({}) => {
 
             <FormField
 
-                type='plain'
+                type={'plain'}
+
+                placeHolder={"Search for anything"}
 
                 withButton={{
 
