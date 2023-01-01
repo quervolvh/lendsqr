@@ -24,7 +24,7 @@ export const SmallSummaryCard: React.FC<Props> = ({
 
                 <div
                     className="summary-card-small-icon"
-                    dangerouslySetInnerHTML={{ __html: (svgIcon || SummaryCardSvg) }}
+                    dangerouslySetInnerHTML={{ __html: (svgIcon || SummaryCardSvg) as string }}
                 />
             }
 

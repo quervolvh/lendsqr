@@ -7,14 +7,16 @@ import { useOnClickOutside } from 'hooks/useOnClickOutside';
 import { classnames } from 'utils';
 
 export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX.Element => {
+    
     const ref: React.MutableRefObject<any> = useRef();
+    
     const [isExpanded, setIsExpanded] = useState(false);
 
     const router = useRouter();
 
-    const reset = () => {
-        router.push("/");
-    };
+    // const reset = () => {
+    //     router.push("/");
+    // };
 
     useOnClickOutside(ref, () => isExpanded ? setIsExpanded(false) : null);
 

@@ -2,9 +2,14 @@ import React from 'react';
 import Head from 'next/head';
 
 export const MetaHead: React.FC<Props> = ({ title = "Lendsqr" }) => {
+  
   const titleString = `${title || "Lendsqr"}`;
-  const description = 'Our Lending-as-a-Service solution powers lenders to launch in the shortest possible time, and scale their digital lending business across multiple channels, at the lowest cost.';
+  
+  const description = `Our Lending-as-a-Service solution powers lenders to launch in the shortest possible time, and scale their digital 
+  lending business across multiple channels, at the lowest cost.`;
+
   const link = 'http://lendsqr.com';
+  
   const logo = 'https://res.cloudinary.com/dsrsn7qj5/image/upload/v1672309672/lendsqr/android-chrome-512x512_bcvgix.png';
 
   const seoAttributes = `{

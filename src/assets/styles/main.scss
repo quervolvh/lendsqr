@@ -11,11 +11,13 @@
 
 //4. Transition
 @import 'transitions/fadeIn';
+@import 'transitions/content-loader';
 
 //5. Components
 @import "components/button";
 @import "components/form-field/index";
 @import "components/summary-card";
+@import "components/table";
 
 //6. Layout
 @import "layout/LandingLayout";

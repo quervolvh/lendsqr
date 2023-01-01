@@ -1,5 +1,4 @@
 import {
-    ArrowLeft,
     UsersIcon,
     GuarantorsIcon,
     LoanIcon,
@@ -20,8 +19,6 @@ import {
     FeesAndPricingIcon,
     AuditLogsIcons,
     SystemMessagesIcon,
-    LogoutIcon,
-    DashboardIcon,
 } from 'components';
 
 type sideNavBlockItemType = {

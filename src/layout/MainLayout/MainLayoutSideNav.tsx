@@ -14,8 +14,6 @@ const MainLayoutSideNav: React.FC<{ active?: string }> = ({ active }) => {
 
                     const activeLink = active?.toLocaleLowerCase() || "";
 
-                    console.log(activeLink )
-
                     return (
 
                         <div

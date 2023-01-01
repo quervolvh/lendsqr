@@ -1,4 +1,5 @@
-import { ActiveUsersIcons, CardsUsersIcon, SmallSummaryCard, UsersIcon, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
+import { ActiveUsersIcons, CardsUsersIcon, SmallSummaryCard, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
+import { Table } from 'components/Table';
 import { MainLayout } from 'layout/MainLayout';
 
 export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
@@ -72,6 +73,12 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
         )}
 
       </div>
+
+      <Table
+        loader={true}
+        heading={["ORGANIZATION", "USERNAME", "EMAIL", "PHONE NUMBER", "DATE JOINED", "STATUS"]}
+        data={[]}
+      />
 
     </MainLayout>
 
