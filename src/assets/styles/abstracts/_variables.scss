@@ -10,7 +10,11 @@ $colors: (
   error-item: #f36b7f,
   input-border: rgba(84, 95, 125, 0.15),
   background: #FBFBFB,
-  card-bg: transparentize(#DF18FF , 0.9)
+  card-bg: #DF18FF,
+  status-pending: #E9B200,
+  status-blacklisted: #E4033B,
+  status-active: #39CD62,
+
 );
 
 $card-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);

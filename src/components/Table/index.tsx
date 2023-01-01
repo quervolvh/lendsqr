@@ -66,7 +66,7 @@ export const Table: React.FC<TableProps> = (
                             {(heading || []).map((head, index) => (
                                 <React.Fragment key={`table-${uniqueKey}-head-${head}-${index}`}>
                                     {!props.customThRenderer ?
-                                        <th > {head} </th>
+                                        <th> {head} </th>
                                         :
                                         <props.customThRenderer item={head} />
                                     }

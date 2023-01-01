@@ -56,8 +56,9 @@
     }
 
     td {
+      @include font-size(small);
       padding: 20px 0;
-      font-weight: 300;
+      font-weight: 400;
       color: color(secondary);
 
       &:first-child {
@@ -104,6 +105,38 @@
     .select-pop {
       min-width: 230px;
     }
+
+  }
+
+  &-status {
+
+    border-radius: 100px;
+    padding: 7px 13px;
+    width: max-content;
+    background: transparentize(color(secondary), 0.9 );
+    color: color(secondary);
+
+    &-pending {
+
+      background: transparentize(color(status-pending),0.9);
+      color: color(status-pending)
+
+    }
+
+    &-active {
+
+      background: transparentize(color(status-active),0.9);
+      color: color(status-active);
+
+    }
+
+    &-blacklisted {
+
+      background: transparentize(color(status-blacklisted),0.9);
+      color: color(status-blacklisted);
+
+    }
+  
 
   }
 
