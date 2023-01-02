@@ -95,6 +95,13 @@
     }
   }
 
+  &-td-filter {
+
+    display: flex;
+    align-items: center;
+
+  }
+
   &-wide {
     width: unset;
   }

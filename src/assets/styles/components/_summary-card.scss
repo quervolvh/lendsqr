@@ -32,7 +32,7 @@
       max-width: 60px;
       min-height: 60px;
       max-height: 60px;
-      background: color(card-bg);
+      background: transparentize(color(card-bg), 0.9);
     }
 
     h2 {

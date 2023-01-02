@@ -1,4 +1,5 @@
 import { ActiveUsersIcons, CardsUsersIcon, SmallSummaryCard, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
+import { ComponentFilter } from 'components/Filters/ComponentFilter';
 import { Table } from 'components/Table';
 import { MainLayout } from 'layout/MainLayout';
 
@@ -48,6 +49,314 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
   ];
 
+  const mockData = [
+
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status table-status-pending'> Pending </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status  table-status-inactive'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status  table-status-blacklisted'> Blacklisted </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status  table-status-active'> Active </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ],
+    [
+
+      "Lendsqr",
+
+      "Adedeji",
+
+      "adedeji@lendsqr.com",
+
+      "08078903721",
+
+      "May 15, 2020 10:00 AM",
+
+      () => <div className='table-status'> Inactive </div>
+
+    ]
+
+  ];
+
+  const HeaderComponent: React.FC<{ title: string }> = ({ title }) => {
+
+    return (
+
+      <div className='table-td-filter'>
+
+        <p> {title} </p>
+
+        <ComponentFilter
+
+          filterOptions={{
+
+            safeParams: [],
+
+            options: [
+
+              {
+                label: "Organization",
+                value: "organization",
+                options: []
+              },
+
+              {
+                label: "Username",
+                value: "username",
+                options: []
+              },
+
+              {
+                label: "Email",
+                value: "email",
+                options: []
+              },
+
+              {
+                label: "Phone Number",
+                value: "phone",
+                options: []
+              },
+
+              {
+                label: "Status",
+                value: "status",
+                options: []
+              },
+
+            ],
+
+            withDateSelector: true,
+
+            onSubmit: e => console.log(e)
+
+          }}
+
+        />
+
+      </div>
+
+
+    )
+
+  }
+
   return (
 
     <MainLayout
@@ -58,120 +367,49 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
       active={"customers"}
     >
 
-      <div className='customers-user-summary'>
+      <>
 
-        {summaryData.map((item) =>
+        <div className='customers-user-summary'>
 
-          <SmallSummaryCard
+          {summaryData.map((item) =>
 
-            key={`summary-for-${item.label}`}
+            <SmallSummaryCard
 
-            {...item}
+              key={`summary-for-${item.label}`}
 
-          />
+              {...item}
 
-        )}
+            />
 
-      </div>
+          )}
 
-      <Table
-        loader={false}
-        heading={["ORGANIZATION", "USERNAME", "EMAIL", "PHONE NUMBER", "DATE JOINED", "STATUS"]}
-        data={[
+        </div>
 
-          [
+        <Table
 
-            "Lendsqr",
+          loader={false}
 
-            "Adedeji",
+          heading={[
 
-            "adedeji@lendsqr.com",
+            <HeaderComponent title='ORGANIZATION' />,
 
-            "08078903721",
+            <HeaderComponent title='USERNAME' />,
 
-            "May 15, 2020 10:00 AM",
+            <HeaderComponent title='EMAIL' />,
 
-            ()=> <div className='table-status table-status-pending'> Pending </div>
+            <HeaderComponent title='PHONE NUMBER' />,
 
-          ],
-          [
+            <HeaderComponent title='DATE JOINED' />,
 
-            "Lendsqr",
+            <HeaderComponent title='DATE JOINED' />,
 
-            "Adedeji",
+          ]}
 
-            "adedeji@lendsqr.com",
+          data={mockData}
 
-            "08078903721",
+        />
 
-            "May 15, 2020 10:00 AM",
-
-            ()=> <div className='table-status  table-status-inactive'> Inactive </div>
-
-          ],
-          [
-
-            "Lendsqr",
-
-            "Adedeji",
-
-            "adedeji@lendsqr.com",
-
-            "08078903721",
-
-            "May 15, 2020 10:00 AM",
-
-            ()=> <div className='table-status  table-status-blacklisted'> Blacklisted </div>
-
-          ],
-          [
-
-            "Lendsqr",
-
-            "Adedeji",
-
-            "adedeji@lendsqr.com",
-
-            "08078903721",
-
-            "May 15, 2020 10:00 AM",
-
-            ()=> <div className='table-status  table-status-active'> Active </div>
-
-          ],
-          [
-
-            "Lendsqr",
-
-            "Adedeji",
-
-            "adedeji@lendsqr.com",
-
-            "08078903721",
-
-            "May 15, 2020 10:00 AM",
-
-            ()=> <div className='table-status'> Inactive </div>
-
-          ],
-          [
-
-            "Lendsqr",
-
-            "Adedeji",
-
-            "adedeji@lendsqr.com",
-
-            "08078903721",
-
-            "May 15, 2020 10:00 AM",
-
-            ()=> <div className='table-status'> Inactive </div>
-
-          ]
-
-        ]}
-      />
+      </>
 
     </MainLayout>
 

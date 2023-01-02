@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { PlainInput } from './PlainInput';
+import { OptionsInput } from './OptionInput';
 
 export const FormField: React.FC<Props> = (props) => {
 
@@ -11,6 +12,11 @@ export const FormField: React.FC<Props> = (props) => {
     let RenderElement: ReactElement | any = () => null;
 
     switch (props?.type) {
+
+        case 'option':
+            RenderElement = OptionsInput;
+            break;
+
         default:
             RenderElement = PlainInput;
     }
@@ -21,7 +27,7 @@ export const FormField: React.FC<Props> = (props) => {
 };
 
 interface Props {
-    type?:  'plain' | 'password',
+    type?:  'plain' | 'password' | 'option',
     label?: string,
     onChange?: (e?: any) => void,
     value?: string | undefined | null | number,
