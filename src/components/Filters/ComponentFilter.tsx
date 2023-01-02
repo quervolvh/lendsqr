@@ -42,6 +42,8 @@ interface Props {
 
             multiSelect?: boolean,
 
+            type?: "option" | "plain" | "date",
+
             options?: {
 
                 label: string,

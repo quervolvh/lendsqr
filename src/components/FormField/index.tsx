@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import { PlainInput } from './PlainInput';
 import { OptionsInput } from './OptionInput';
+import { DateField } from './DateField';
 
 export const FormField: React.FC<Props> = (props) => {
 
@@ -17,6 +18,10 @@ export const FormField: React.FC<Props> = (props) => {
             RenderElement = OptionsInput;
             break;
 
+        case 'date':
+            RenderElement = DateField;
+            break;
+
         default:
             RenderElement = PlainInput;
     }
@@ -27,7 +32,7 @@ export const FormField: React.FC<Props> = (props) => {
 };
 
 interface Props {
-    type?:  'plain' | 'password' | 'option',
+    type?: 'plain' | 'password' | 'option' | 'date',
     label?: string,
     onChange?: (e?: any) => void,
     value?: string | undefined | null | number,
@@ -37,7 +42,7 @@ interface Props {
     error?: boolean | string,
     onKeyDown?(e: React.KeyboardEvent): void,
     errorClass?: string,
-    onClick?(): void ,
+    onClick?(): void,
     onFocus?: () => void,
     onBlur?: () => void,
     withButton?: { label?: string, onClick?(): void, className?: string, disabled?: boolean, vectorIcon?: string },

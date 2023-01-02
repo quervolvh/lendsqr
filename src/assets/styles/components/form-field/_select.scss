@@ -4,7 +4,7 @@
   align-items: center;
   outline: none;
   border-radius: 8px;
-  border: 1px solid color(primary);
+  border: $inputBorder;
   padding: 13px 24px;
   padding-right: 0;
   height: 50px;
@@ -49,7 +49,7 @@
     }
 
     &:hover {
-      border: 1px solid color(primary);
+      border: $inputBorder;
       // background: darken(#e2e8f0, 10);
     }
   }
@@ -61,7 +61,7 @@
 
   &:hover,
   &:focus {
-    border: 1px solid color(primary);
+    border: $inputBorder;
   }
 
   &-box {

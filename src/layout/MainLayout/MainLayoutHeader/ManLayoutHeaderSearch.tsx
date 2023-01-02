@@ -2,7 +2,7 @@ import React from 'react';
 import { SearchIcon } from 'components';
 import { FormField } from 'components/FormField';
 
-export const MainLayoutHeaderSearch : React.FC<Props> = ({}) => {
+export const MainLayoutHeaderSearch: React.FC<Props> = ({ }) => {
 
     return (
 
@@ -16,18 +16,17 @@ export const MainLayoutHeaderSearch : React.FC<Props> = ({}) => {
 
                 withButton={{
 
-                    vectorIcon : SearchIcon
-                
+                    vectorIcon: SearchIcon
+
                 }}
 
             />
 
         </div>
 
-
     );
 
 };
 
 
-interface Props {}
+interface Props { }

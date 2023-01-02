@@ -4,12 +4,11 @@ import { FiltersIcon } from "components";
 import { change, classnames, primitiveObj } from "utils";
 import { useOnClickOutside } from "hooks/useOnClickOutside";
 import { generateOptionConsiderations } from "utils";
-import { DatePeriodSelector } from "components/DateSelector/DatePeriodSelector";
 import { useGetParamsOnLoad } from "hooks/useGetParamsOnLoad";
 
 export const Filters: React.FC<Props> = ({ filterOptions, className, onReset }) => {
 
-    const { options, label, classNames, noFilterIcon, safeParams, onSubmit, withDateSelector } = filterOptions || {};
+    const { options, classNames, safeParams, onSubmit } = filterOptions || {};
 
     const initialSelection = ({
         ...generateOptionConsiderations(
@@ -97,15 +96,6 @@ export const Filters: React.FC<Props> = ({ filterOptions, className, onReset }) 
 
     }
 
-    const dateChange = (e: { startDate?: string | null, endDate?: string | null }) => {
-
-        const { startDate, endDate } = e;
-
-        setState((prevState) => ({ ...prevState, selection: { ...prevState.selection, startDate, endDate } }));
-
-    }
-
-
     const ref = useRef() as LegacyRef<HTMLDivElement> | undefined;
 
     useGetParamsOnLoad({
@@ -186,7 +176,7 @@ export const Filters: React.FC<Props> = ({ filterOptions, className, onReset }) 
 
                             <FormField
 
-                                type={"option"}
+                                type={item?.type}
 
                                 options={!item?.options ? [item] : item.options}
 
@@ -209,18 +199,6 @@ export const Filters: React.FC<Props> = ({ filterOptions, className, onReset }) 
                         </li>
 
                     )}
-
-                    {withDateSelector && <li>
-
-                        <DatePeriodSelector
-
-                            onChange={(e) => dateChange(e)}
-
-                            getParamsOnLoad={safeParams?.includes("startDate") && safeParams?.includes("endDate")}
-
-                        />
-
-                    </li>}
 
                 </ul>
 
@@ -258,11 +236,13 @@ type optionType = {
 
     multiSelect?: boolean,
 
+    type?: "date" | "plain" | "option",
+
     options?: {
 
         label: string,
 
-        value?: string | boolean | null
+        value?: string | boolean | null,
 
     }[]
 
@@ -287,8 +267,6 @@ interface Props {
         noFilterIcon?: boolean,
 
         preSelectedOption?: string,
-
-        withDateSelector?: boolean,
 
         onSubmit?: (e: { [key: string]: string | boolean | undefined | null | { [key: string]: boolean | string | undefined | null } }) => void
     }

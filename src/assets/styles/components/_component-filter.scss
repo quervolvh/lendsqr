@@ -105,6 +105,12 @@
       min-height: 50px;
     }
 
+    .form-field input {
+
+      border-radius: 8px;
+
+    }
+
     .form-field .select-pop {
       min-width: 230px;
       max-width: 234px;
@@ -122,5 +128,12 @@
         margin-left: 0;
       }
     }
+
+    ul {
+
+      padding: 20px 0 0;
+
+    }
+
   }
 }

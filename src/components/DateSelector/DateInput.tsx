@@ -38,13 +38,16 @@ const DateInput: React.FC<InputProps> = ({
             window &&
             document &&
             document.getElementById(datePickerId) &&
-            document.getElementsByClassName("litepicker").length !== 1) {
+            document.getElementsByClassName("litepicker").length !== 1 &&
+            visibility
+            
+            ) {
 
             import('litepicker').then(({ Litepicker }) => {
                 new Litepicker({
                     // @ts-ignore
                     element: document.getElementById(datePickerId),
-                    singleMode: singleMode,
+                    singleMode: true,
                     inlineMode: true,
                     numberOfColumns: 1,
                     numberOfMonths: 1,
@@ -57,7 +60,7 @@ const DateInput: React.FC<InputProps> = ({
             });
         }
         // eslint-disable-next-line
-    }, [typeof window === "undefined"]);
+    }, [typeof window === "undefined" , visibility]);
 
     useEffect(()=> {
 

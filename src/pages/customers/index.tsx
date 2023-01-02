@@ -313,36 +313,46 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
               {
                 label: "Organization",
                 value: "organization",
+                type: "option",
                 options: []
               },
 
               {
                 label: "Username",
                 value: "username",
+                type: "plain",
                 options: []
               },
 
               {
                 label: "Email",
                 value: "email",
+                type: "plain",
+                options: []
+              },
+
+              {
+                label: "Date",
+                value: "date",
+                type: "date",
                 options: []
               },
 
               {
                 label: "Phone Number",
                 value: "phone",
+                type: "plain",
                 options: []
               },
 
               {
                 label: "Status",
                 value: "status",
+                type: "option",
                 options: []
               },
 
             ],
-
-            withDateSelector: true,
 
             onSubmit: e => console.log(e)
 
