@@ -33,6 +33,7 @@ export const FormField: React.FC<Props> = (props) => {
 
 interface Props {
     type?: 'plain' | 'password' | 'option' | 'date',
+    options?: string[],
     noDropDownIcon?: boolean,
     label?: string,
     onChange?: (e?: any) => void,

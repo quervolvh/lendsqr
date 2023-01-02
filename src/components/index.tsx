@@ -8,3 +8,4 @@ export * from './LinkWrapper';
 export * from './MetaHead';
 export * from './SummaryCard';
 export * from './Table/TableOptionItem';
+export * from './Table/Pagination';

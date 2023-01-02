@@ -1,4 +1,4 @@
-import { ActivateUserIcon, ActiveUsersIcons, BlackListUserIcon, CardsUsersIcon, EyeIcon, FormField, SmallSummaryCard, TableOptionItem, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
+import { ActivateUserIcon, ActiveUsersIcons, BlackListUserIcon, CardsUsersIcon, EyeIcon, Pagination, SmallSummaryCard, TableOptionItem, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
 import { ComponentFilter } from 'components/Filters/ComponentFilter';
 import { OptionsInput } from 'components/FormField/OptionInput';
 import { Table } from 'components/Table';
@@ -235,6 +235,16 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
           data={data}
 
+        />
+
+        <Pagination
+          pages={5}
+          page={state.page}
+          perPageSelector={true}
+          dataCount={state.data?.length || 0}
+          onClick={pageAndPerPage => console.log(pageAndPerPage)}
+          empty={state?.data?.length === 0}
+          perPage={20}
         />
 
       </>
