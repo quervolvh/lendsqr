@@ -95,6 +95,20 @@
     }
   }
 
+  &-option-item {
+
+    display: flex;
+    align-items: center;
+
+    span {
+
+      display: block;
+      margin-right: 13px;
+
+    }
+
+  }
+
   &-td-filter {
 
     display: flex;

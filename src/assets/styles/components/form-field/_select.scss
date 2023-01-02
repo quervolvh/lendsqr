@@ -49,8 +49,9 @@
     }
 
     &:hover {
-      border: $inputBorder;
-      // background: darken(#e2e8f0, 10);
+
+      border: unset;
+
     }
   }
 
@@ -95,8 +96,9 @@
     position: absolute;
     top: 55px;
     margin-top: 10px;
-    box-shadow: 0 4px 7px rgb(0 0 0 / 5%);
-    border-radius: 8px;
+    border: 1px solid rgba(84, 95, 125, 0.04);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
     padding: 0;
     width: 100%;
     max-height: 400px;
@@ -209,8 +211,7 @@
 
     .select-pop {
       top: 37px;
-      left: 0;
-
+      right: -10px;
       width: max-content;
 
       li {

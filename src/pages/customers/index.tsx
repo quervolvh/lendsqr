@@ -1,5 +1,6 @@
-import { ActiveUsersIcons, CardsUsersIcon, SmallSummaryCard, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
+import { ActivateUserIcon, ActiveUsersIcons, BlackListUserIcon, CardsUsersIcon, EyeIcon, FormField, SmallSummaryCard, TableOptionItem, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
 import { ComponentFilter } from 'components/Filters/ComponentFilter';
+import { OptionsInput } from 'components/FormField/OptionInput';
 import { Table } from 'components/Table';
 import { MainLayout } from 'layout/MainLayout';
 
@@ -63,7 +64,21 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
       "May 15, 2020 10:00 AM",
 
-      () => <div className='table-status table-status-pending'> Pending </div>
+      () => <div className='table-status table-status-pending'> Pending </div>,
+
+      () => (
+        <OptionsInput
+          selectorBoxClass="select-button"
+          className='m-0 table-option'
+          isContextMenu={true}
+          type="option"
+          options={[
+            () => <TableOptionItem svgIcon={EyeIcon} label={"View Details"} />,
+            () => <TableOptionItem svgIcon={BlackListUserIcon} label={"Blacklist User"} />,
+            () => <TableOptionItem svgIcon={ActivateUserIcon} label={"Activate User"} />,
+          ]}
+        />
+      )
 
     ],
     [
@@ -412,6 +427,8 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
             <HeaderComponent title='DATE JOINED' />,
 
             <HeaderComponent title='DATE JOINED' />,
+
+            ""
 
           ]}
 

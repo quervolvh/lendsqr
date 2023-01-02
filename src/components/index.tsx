@@ -7,3 +7,4 @@ export * from './Header/MobileHeaderToggler';
 export * from './LinkWrapper';
 export * from './MetaHead';
 export * from './SummaryCard';
+export * from './Table/TableOptionItem';

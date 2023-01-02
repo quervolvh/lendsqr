@@ -8,6 +8,7 @@ import { change as setChange } from 'utils';
 import { OptionInputItem } from './OptionInputItem';
 import { generateOptionConsiderations, mapObjectKeysToLabels } from 'utils';
 import { objectOptionType } from 'types';
+import { ContextMenuIcon } from 'components/Assets';
 
 
 export const OptionsInput: React.FC<OptionsInputProp> = (
@@ -295,7 +296,7 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
 
                                     <div className="select-box-context">
 
-                                        <i className={props.ellipseIcon || "fas fa-ellipsis-h"} />
+                                        <i dangerouslySetInnerHTML={{ __html : ContextMenuIcon }} />
 
                                     </div>
 

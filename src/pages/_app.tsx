@@ -58,7 +58,9 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [clientMode]);
 
   useEffect(() => {
+    
     change(isMobile, "showMobileView", setState);
+  
   }, [isMobile]);
 
   useEffect(() => {

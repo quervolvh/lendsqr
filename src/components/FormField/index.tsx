@@ -33,6 +33,7 @@ export const FormField: React.FC<Props> = (props) => {
 
 interface Props {
     type?: 'plain' | 'password' | 'option' | 'date',
+    noDropDownIcon?: boolean,
     label?: string,
     onChange?: (e?: any) => void,
     value?: string | undefined | null | number,
@@ -45,5 +46,7 @@ interface Props {
     onClick?(): void,
     onFocus?: () => void,
     onBlur?: () => void,
+    selectorBoxClass?: string,
+    isContextMenu?: boolean,
     withButton?: { label?: string, onClick?(): void, className?: string, disabled?: boolean, vectorIcon?: string },
 }
