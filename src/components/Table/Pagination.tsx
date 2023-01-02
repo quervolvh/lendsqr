@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FormField } from 'components';
-import { classnames } from 'utils';
 import { PaginationPages } from './PaginationPages';
 
 export const Pagination: React.FC<Props> = ({ pages, page, perPageSelector, perPage = 20, empty, dataCount, ...props }) => {
@@ -9,27 +8,7 @@ export const Pagination: React.FC<Props> = ({ pages, page, perPageSelector, perP
 
     const [_perPage, _setPerPage] = useState(initialState);
 
-    const Page = Number(page || 0) || 0;
-
-    const Pages = Number(pages || 0) || 0;
-
-    const conditions = {
-
-        doublePrev: Page !== 1,
-
-        prev: Page - 1 > 0 && Page > 1,
-
-        next: (Page + 1) <= Pages,
-
-        doubleNext: Page !== Pages
-
-    }
-
-    const greyOut = "color-secondary-text";
-
     const clickHer = (e: { page: number, perPage: number }) => props.onClick(e);
-
-    const buttonProps = { role: "button", tabIndex: 0 };
 
     return (
         <div className='pagination'>
@@ -52,11 +31,14 @@ export const Pagination: React.FC<Props> = ({ pages, page, perPageSelector, perP
                             
                                 options={["20", "40", "60", "80", "100"]}
                             
-                                value={String(perPage || _perPage)}
+                                value={String(_perPage || perPage)}
                             
                                 onChange={(e) => {
+
                                     _setPerPage(e);
+
                                     clickHer({ perPage: e, page: 1 })
+
                                 }}
                                 
                             />
@@ -69,11 +51,13 @@ export const Pagination: React.FC<Props> = ({ pages, page, perPageSelector, perP
 
                     <PaginationPages 
                     
-                        page={page} 
+                        page={page || 1} 
                         
-                        pages={pages}
+                        pages={pages || 1}
 
-                        perPage={perPage}
+                        perPage={perPage || 20}
+
+                        onClick={e => clickHer({ page: e , perPage : _perPage })}
                         
                     />
 

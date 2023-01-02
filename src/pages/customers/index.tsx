@@ -16,7 +16,9 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
     data: customerType[],
 
-    page: number
+    page: number,
+
+    perPage: number
 
   }>({
 
@@ -24,7 +26,9 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
     data: [],
 
-    page: 1
+    page: 1,
+
+    perPage: 20
 
   });
 
@@ -162,6 +166,8 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
   );
 
+  const numberOfPages = String((state.data?.length || 0) / state.perPage);
+
   useFetching({
 
     dispatcher: () => (
@@ -180,6 +186,8 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
     safeParams: []
 
   });
+
+
 
   return (
 
@@ -233,18 +241,60 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
           ]}
 
-          data={data}
+          data={data?.filter((_, index) => {
+
+            const itemsToDisplayStart = (state.page - 1) * state.perPage;
+
+            const lowerLimit = itemsToDisplayStart;
+
+            const upperLimit = (state.page) * state.perPage;
+
+            console.log(lowerLimit , upperLimit)
+
+            if (index >= lowerLimit && index < upperLimit) {
+
+              return true;
+
+            }
+
+            return false;
+
+          }
+
+          )}
 
         />
 
         <Pagination
-          pages={5}
+
+          pages={ (state.data?.length || 0) / state.perPage}
+
           page={state.page}
+
           perPageSelector={true}
+
           dataCount={state.data?.length || 0}
-          onClick={pageAndPerPage => console.log(pageAndPerPage)}
+
+          onClick={(pageAndPerPage) =>
+
+            setState((prevState) => ({
+
+              page: pageAndPerPage.page,
+
+              perPage: pageAndPerPage.perPage,
+
+              data: prevState.data,
+
+              loading: prevState.loading
+
+            })
+
+            )
+          }
           empty={state?.data?.length === 0}
+
           perPage={20}
+
         />
 
       </>

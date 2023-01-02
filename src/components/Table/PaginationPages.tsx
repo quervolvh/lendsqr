@@ -3,6 +3,8 @@ import { classnames } from 'utils';
 
 export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty, ...props }) => {
 
+    const Pages = parseInt(String(pages)?.includes(".") ? String(pages + 1) : String(pages))
+
     // Sets the limit of pages to be displayed in either direction
     // i.e , direction to the left and right of the current page
     const directionLimit = isMobile ? 1 : 2;
@@ -26,14 +28,14 @@ export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty,
 
     // Creates an array from the number of pages we are provided with and
     // splices it so that the array only contains pages that are greater than the value of the current page
-    let pages_ = [...Array(pages)].map((page, index) => index + 1).splice(page, nextPagesToDisplay);
+    let pages_ = [...Array(Pages)].map((page, index) => index + 1).splice(page, nextPagesToDisplay);
 
     // Creates a limit for slicing the array of prevPage numbers
     const prevPageLengthLimit = directionLimit + (directionLimit - pages_.length);
 
     // Creates an array from the number of pages we are provided with and
     // splices it so that the array only contains pages that are less than the value of the current page
-    let prevPages = [...Array(pages)].map((page, index) => index + 1).splice(0, page);
+    let prevPages = [...Array(Pages)].map((page, index) => index + 1).splice(0, page);
 
     prevPages = prevPages.reverse().splice(0, prevPageLengthLimit).reverse();
 
@@ -97,13 +99,13 @@ export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty,
                 ))}
 
 
-                {!pages_.filter((page, index) => index < 4).includes(pages) && (
+                {!pages_.filter((page, index) => index < 4).includes(Pages) && (
                     <>
                         <li>
                             ...
                         </li>
                         <li>
-                            {pages}
+                            {Pages}
                         </li>
                     </>
                 )}
