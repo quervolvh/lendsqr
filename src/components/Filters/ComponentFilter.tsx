@@ -14,9 +14,13 @@ export const ComponentFilter: React.FC<Props> = ({
         <div className='component-filter'>
 
             <Filters
+                
                 key={filterKey}
+                
                 filterOptions={filterOptions}
+                
                 onReset={() => setFilterKey(quickRandomNumber())}
+
             />
 
         </div>

@@ -2,9 +2,31 @@ import { ActivateUserIcon, ActiveUsersIcons, BlackListUserIcon, CardsUsersIcon, 
 import { ComponentFilter } from 'components/Filters/ComponentFilter';
 import { OptionsInput } from 'components/FormField/OptionInput';
 import { Table } from 'components/Table';
+import { useFetching } from 'hooks/useFetching';
 import { MainLayout } from 'layout/MainLayout';
+import { useState } from 'react';
+import { customerType } from 'types';
+import { DD_MM_YY_HH_mm_a } from 'utils';
 
 export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
+
+  const [state, setState] = useState<{
+
+    loading: boolean,
+
+    data: customerType[],
+
+    page: number
+
+  }>({
+
+    loading: true,
+
+    data: [],
+
+    page: 1
+
+  });
 
   const summaryData = [
 
@@ -50,337 +72,114 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
   ];
 
-  const mockData = [
-
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status table-status-pending'> Pending </div>,
-
-      () => (
-        <OptionsInput
-          selectorBoxClass="select-button"
-          className='m-0 table-option'
-          isContextMenu={true}
-          type="option"
-          options={[
-            () => <TableOptionItem svgIcon={EyeIcon} label={"View Details"} />,
-            () => <TableOptionItem svgIcon={BlackListUserIcon} label={"Blacklist User"} />,
-            () => <TableOptionItem svgIcon={ActivateUserIcon} label={"Activate User"} />,
-          ]}
-        />
-      )
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status  table-status-inactive'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status  table-status-blacklisted'> Blacklisted </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status  table-status-active'> Active </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ],
-    [
-
-      "Lendsqr",
-
-      "Adedeji",
-
-      "adedeji@lendsqr.com",
-
-      "08078903721",
-
-      "May 15, 2020 10:00 AM",
-
-      () => <div className='table-status'> Inactive </div>
-
-    ]
-
-  ];
-
-  const HeaderComponent: React.FC<{ title: string }> = ({ title }) => {
-
-    return (
-
-      <div className='table-td-filter'>
-
-        <p> {title} </p>
-
-        <ComponentFilter
-
-          filterOptions={{
-
-            safeParams: [],
-
-            options: [
-
-              {
-                label: "Organization",
-                value: "organization",
-                type: "option",
-                options: []
-              },
-
-              {
-                label: "Username",
-                value: "username",
-                type: "plain",
-                options: []
-              },
-
-              {
-                label: "Email",
-                value: "email",
-                type: "plain",
-                options: []
-              },
-
-              {
-                label: "Date",
-                value: "date",
-                type: "date",
-                options: []
-              },
-
-              {
-                label: "Phone Number",
-                value: "phone",
-                type: "plain",
-                options: []
-              },
-
-              {
-                label: "Status",
-                value: "status",
-                type: "option",
-                options: []
-              },
-
-            ],
-
-            onSubmit: e => console.log(e)
-
-          }}
-
-        />
-
-      </div>
-
-
+  const data = state?.data?.map((item) => ([
+    item?.orgName,
+    item?.userName,
+    item?.email,
+    item?.phoneNumber,
+    DD_MM_YY_HH_mm_a(item.createdAt || ""),
+    () => <div className='table-status table-status-pending'> Pending </div>,
+    () => (
+      <OptionsInput
+        selectorBoxClass="select-button"
+        className='m-0 table-option'
+        isContextMenu={true}
+        type="option"
+        options={[
+          () => <TableOptionItem svgIcon={EyeIcon} label={"View Details"} />,
+          () => <TableOptionItem svgIcon={BlackListUserIcon} label={"Blacklist User"} />,
+          () => <TableOptionItem svgIcon={ActivateUserIcon} label={"Activate User"} />,
+        ]}
+      />
     )
+  ]));
 
-  }
+  const HeaderComponent = (title: string) => (
+
+    <div className='table-td-filter'>
+
+      <p> {title} </p>
+
+      <ComponentFilter
+
+        filterOptions={{
+
+          safeParams: [],
+
+          options: [
+
+            {
+              label: "Organization",
+              value: "organization",
+              type: "option",
+              options: []
+            },
+
+            {
+              label: "Username",
+              value: "username",
+              type: "plain",
+              options: []
+            },
+
+            {
+              label: "Email",
+              value: "email",
+              type: "plain",
+              options: []
+            },
+
+            {
+              label: "Date",
+              value: "date",
+              type: "date",
+              options: []
+            },
+
+            {
+              label: "Phone Number",
+              value: "phone",
+              type: "plain",
+              options: []
+            },
+
+            {
+              label: "Status",
+              value: "status",
+              type: "option",
+              options: []
+            },
+
+          ],
+
+          onSubmit: e => console.log(e)
+
+        }}
+
+      />
+
+    </div>
+
+  );
+
+  useFetching({
+
+    dispatcher: () => (
+
+      fetch("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users", { method: "GET" })
+
+        .then(item => item?.json())
+
+        .catch(() => console.log("error")
+
+        )
+    ),
+
+    setter: (e) => setState((prevState) => ({ ...prevState, loading: false, page: 1, data: e })),
+
+    safeParams: []
+
+  });
 
   return (
 
@@ -412,27 +211,29 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
         <Table
 
-          loader={false}
+          loader={state.loading}
+
+          uniqueKey={"customers-table"}
 
           heading={[
 
-            <HeaderComponent title='ORGANIZATION' />,
+            () => HeaderComponent('ORGANIZATION'),
 
-            <HeaderComponent title='USERNAME' />,
+            () => HeaderComponent('USERNAME'),
 
-            <HeaderComponent title='EMAIL' />,
+            () => HeaderComponent('EMAIL'),
 
-            <HeaderComponent title='PHONE NUMBER' />,
+            () => HeaderComponent('PHONE NUMBER'),
 
-            <HeaderComponent title='DATE JOINED' />,
+            () => HeaderComponent('DATE JOINED'),
 
-            <HeaderComponent title='DATE JOINED' />,
+            () => HeaderComponent('STATUS'),
 
             ""
 
           ]}
 
-          data={mockData}
+          data={data}
 
         />
 

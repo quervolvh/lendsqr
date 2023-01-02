@@ -42,15 +42,13 @@ const TableData: React.FC<TableDataProp> = ({ item, count }) => {
     )
 }
 
-export const Table: React.FC<TableProps> = (
-    { from, heading, OptionComponent,
-        data, loaderLength,
-        uniqueKey, loader, ...props
-    }) => {
+export const Table: React.FC<TableProps> = (props) => {
 
     const router = useRouter();
 
     const [clientMode, setClientMode] = useState(false);
+
+    const { from, heading, OptionComponent, data, loaderLength, uniqueKey, loader } = props;
 
     SetClientAvailability(e => setClientMode(e));
 
@@ -60,24 +58,27 @@ export const Table: React.FC<TableProps> = (
             <div className="table-component">
 
                 <table className={classnames(props.tableClass)}>
+
                     <thead>
+
                         <tr>
 
                             {(heading || []).map((head, index) => (
-                                <React.Fragment key={`table-${uniqueKey}-head-${head}-${index}`}>
-                                    {!props.customThRenderer ?
-                                        <th> {head} </th>
-                                        :
-                                        <props.customThRenderer item={head} />
-                                    }
-                                </React.Fragment>
+
+                                <th key={`table-${uniqueKey}-head-${head}-${index}`}>
+
+                                    {typeof head === "function" && head()}
+
+                                    {typeof head !== "function" && head}
+
+                                </th>
 
                             ))}
 
-                            {OptionComponent && <th />}
-
                         </tr>
+
                     </thead>
+
                     <tbody>
 
                         {(!loader && clientMode) && (data || []).map((data_, index) => {
@@ -201,7 +202,7 @@ export const Table: React.FC<TableProps> = (
 type tableRowProcessType = { render?: string | boolean | "link", to?: string, preClick?: () => void };
 interface TableProps {
     data?: Array<string | null | undefined | tableRowProcessType | string[] | (() => JSX.Element)>[]
-    heading?: Array<{} | string>,
+    heading?: Array<{} | string | (() => JSX.Element)>,
     OptionComponent?: React.FC<any>,
     uniqueKey?: string,
     from?: string,
