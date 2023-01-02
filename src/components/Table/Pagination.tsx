@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { FormField } from 'components';
 import { PaginationPages } from './PaginationPages';
 
-export const Pagination: React.FC<Props> = ({ pages, page, perPageSelector, perPage = 20, empty, dataCount, ...props }) => {
+export const Pagination: React.FC<Props> = ( props ) => {
+
+    const { pages, page, perPageSelector, perPage = 20, empty, dataCount, isMobile } = props;
 
     const initialState = perPage || 20;
 
@@ -50,12 +52,12 @@ export const Pagination: React.FC<Props> = ({ pages, page, perPageSelector, perP
                     }
 
                     <PaginationPages 
+
+                        isMobile={isMobile}
                     
                         page={page || 1} 
                         
                         pages={pages || 1}
-
-                        perPage={perPage || 20}
 
                         onClick={e => clickHer({ page: e , perPage : _perPage })}
                         
@@ -72,6 +74,7 @@ export const Pagination: React.FC<Props> = ({ pages, page, perPageSelector, perP
 
 interface Props {
     dataCount: number,
+    isMobile: boolean,
     pages: number,
     page: number,
     perPage?: number,

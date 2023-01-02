@@ -249,8 +249,6 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
             const upperLimit = (state.page) * state.perPage;
 
-            console.log(lowerLimit , upperLimit)
-
             if (index >= lowerLimit && index < upperLimit) {
 
               return true;
@@ -267,7 +265,9 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
         <Pagination
 
-          pages={ (state.data?.length || 0) / state.perPage}
+          isMobile={isMobile}
+
+          pages={(state.data?.length || 0) / state.perPage}
 
           page={state.page}
 
