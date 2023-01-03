@@ -3,13 +3,15 @@ import { classnames } from "utils";
 
 export const ViewFormatter: React.FC<Props> = ({ value, label, className }) => {
 
+    const loading = className === "view-formatter-loader" || className === "view-formatter-loader-label";
+
     return (
 
         <div className={classnames("view-formatter", className)}>
 
-            {value && <h1 className="view-formatter-value"> {value} </h1>}
+            {(value || loading) && <h1 className="view-formatter-value"> {value} </h1>}
 
-            {label && <p className="view-formatter-label"> {label} </p>}
+            {(label || loading) && <p className="view-formatter-label"> {label} </p>}
 
         </div>
 

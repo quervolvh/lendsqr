@@ -3,7 +3,7 @@ import { customerType } from 'types';
 import { GoldenStar, SummaryCardSvg, ViewFormatter } from 'components';
 import { ItemTypeToggle } from 'components/ItemTypeToggle';
 
-export const CustomerOverview: React.FC<Props> = ({ customer }) => {
+export const CustomerOverview: React.FC<Props> = ({ customer, loader }) => {
 
     const [activeTab, setActiveTab] = useState("general");
 
@@ -78,7 +78,7 @@ export const CustomerOverview: React.FC<Props> = ({ customer }) => {
 
     return (
 
-        <div className='customers-user-summary'>
+        <div className='customers-summary'>
 
             <div className='summary-card summary-card-big'>
 
@@ -91,11 +91,27 @@ export const CustomerOverview: React.FC<Props> = ({ customer }) => {
 
                     <div className='summary-card-big-top-content'>
 
-                        <ViewFormatter label="LSQFf587g90" value={name} />
+                        <ViewFormatter
+
+                            className={loader ? 'view-formatter-loader-label' : ""}
+
+                            label={ loader ? "" : "LSQFf587g90"}
+
+                            value={ loader ? "" : name}
+
+                        />
 
                         <UserTier />
 
-                        <ViewFormatter value={customer?.accountBalance} label={"9912345678/Providus Bank"} />
+                        <ViewFormatter
+
+                            className={loader ? 'view-formatter-loader-label' : ""}
+
+                            value={ loader ? "" : customer?.accountBalance}
+
+                            label={ loader ? "" : "9912345678/Providus Bank"}
+
+                        />
 
                     </div>
 
@@ -113,6 +129,8 @@ export const CustomerOverview: React.FC<Props> = ({ customer }) => {
 
 interface Props {
 
-    customer?: customerType
+    customer?: customerType,
+
+    loader?: boolean
 
 }

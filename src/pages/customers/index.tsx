@@ -201,7 +201,7 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
       <>
 
-        <div className='customers-user-summary'>
+        <div className='customers-summary'>
 
           {summaryData.map((item) =>
 
