@@ -138,7 +138,7 @@ interface DisplayOptionProps {
 
     multiSelect: boolean,
 
-    option: string | ReactElement | objectOptionType,
+    option: string | ReactElement | objectOptionType | any,
 
     field: string,
 

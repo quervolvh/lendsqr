@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, JSXElementConstructor } from 'react';
 import { useOnClickOutside } from 'hooks/useOnClickOutside';
 import { FormField } from '../index';
 import { ReactElement } from 'react';
@@ -9,7 +9,6 @@ import { OptionInputItem } from './OptionInputItem';
 import { generateOptionConsiderations, mapObjectKeysToLabels } from 'utils';
 import { objectOptionType } from 'types';
 import { ContextMenuIcon } from 'components/Assets';
-
 
 export const OptionsInput: React.FC<OptionsInputProp> = (
     {
@@ -26,9 +25,9 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
     const [state, setState] = useState({
 
         selection: generateOptionConsiderations(
-            props.multiSelect,
+            props.multiSelect || false,
             props.options as any,
-            field
+            (field || "")
         ),
 
         searchValue: "",
@@ -366,9 +365,9 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
 
                                             multiSelect={props.multiSelect}
 
-                                            field={field}
+                                            field={field || ""}
 
-                                            displayField={props.displayField}
+                                            displayField={props.displayField || ""}
 
                                             toggle={() => createChange(false, "showOptions")}
 
@@ -407,29 +406,29 @@ interface OptionsInputProp {
 
     label?: string,
 
-    onChange(val: string | { [key: string]: any }): void,
+    onChange?(val: string | { [key: string]: any }): void,
 
     onClick?(): void,
 
     defaultValue?: string,
 
-    value: string | any[],
+    value?: string | any[],
 
-    placeHolder: string | React.FC,
+    placeHolder?: string | React.FC,
 
     className: string,
 
-    options: Array<objectOptionType | string | ReactElement>,
+    options: Array<objectOptionType | string |  (()=> ReactElement<any, string | JSXElementConstructor<any>>) >,
 
     onSubmit?: (e: { [key: string]: string | boolean | null | undefined | number }) => void,
 
-    multiSelect: boolean,
+    multiSelect?: boolean,
 
     isContextMenu: boolean,
 
-    field: string,
+    field?: string,
 
-    displayField: string,
+    displayField?: string,
 
     ellipseIcon?: string,
 

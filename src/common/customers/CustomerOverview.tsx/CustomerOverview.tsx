@@ -95,9 +95,9 @@ export const CustomerOverview: React.FC<Props> = ({ customer, loader }) => {
 
                             className={loader ? 'view-formatter-loader-label' : ""}
 
-                            label={ loader ? "" : "LSQFf587g90"}
+                            label={loader ? "" : "LSQFf587g90"}
 
-                            value={ loader ? "" : name}
+                            value={loader ? "" : name}
 
                         />
 
@@ -105,11 +105,11 @@ export const CustomerOverview: React.FC<Props> = ({ customer, loader }) => {
 
                         <ViewFormatter
 
+                            value={loader ? "" : customer?.accountBalance}
+
+                            label={loader ? "" : "9912345678/Providus Bank"}
+
                             className={loader ? 'view-formatter-loader-label' : ""}
-
-                            value={ loader ? "" : customer?.accountBalance}
-
-                            label={ loader ? "" : "9912345678/Providus Bank"}
 
                         />
 
