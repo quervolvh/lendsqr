@@ -78,7 +78,7 @@ export const CustomerOverview: React.FC<Props> = ({ customer, loader }) => {
 
     return (
 
-        <div className='customers-summary'>
+        <div className='customers-specific-summary customers-summary-no-scroll'>
 
             <div className='summary-card summary-card-big'>
 

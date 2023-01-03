@@ -5,6 +5,7 @@ import { useFetching } from "hooks/useFetching";
 import { customerType } from "types";
 import { useRouter } from "next/router";
 import { CustomerDetails } from "common/customers/CustomerDetails";
+import { CustomerSpecificProcesses } from "common/customers/CustomerDetails/CustomerSpecificProcesses";
 
 export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
@@ -65,6 +66,9 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
       isMobile={isMobile}
       deviceWidth={deviceWidth}
       active={"customers"}
+      popReference={"Users"}
+      popLink={selectedUser ? "/customers" : ""}
+      subtitleComponent={ !selectedUser ? undefined : <CustomerSpecificProcesses />}
     >
 
       <>

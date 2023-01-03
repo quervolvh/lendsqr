@@ -2,7 +2,7 @@ import React from 'react';
 import { MainLayoutSideNav } from './MainLayoutSideNav';
 import { MainLayoutHeader } from './MainLayoutHeader';
 import { MainLayoutLegend } from './MainLayoutLegend';
-import { MetaHead , ComponentBackButton } from 'components';
+import { MetaHead, ComponentBackButton } from 'components';
 import { classnames } from 'utils';
 
 export const MainLayout: React.FC<Props> = ({ title, active, contentClass, isMobile, deviceWidth, ...props }) => {
@@ -39,6 +39,7 @@ export const MainLayout: React.FC<Props> = ({ title, active, contentClass, isMob
 
               <ComponentBackButton
                 link={props.popLink}
+                popReference={props.popReference}
                 onClick={() => props.popClick && props.popClick()}
               />
 
@@ -46,13 +47,13 @@ export const MainLayout: React.FC<Props> = ({ title, active, contentClass, isMob
 
             <div className={classnames('main-layout-page-content-space', contentClass)}>
 
-            {(props.displayTitle || props.displaySubtitle || props.subtitleComponent) && (
-              <MainLayoutLegend
-              title={props.displayTitle}
-                subtitle={props.displaySubtitle}
-                subtitleComponent={props.subtitleComponent}
-                className={props.legendClassName} />
-            )}
+              {(props.displayTitle || props.displaySubtitle || props.subtitleComponent) && (
+                <MainLayoutLegend
+                  title={props.displayTitle}
+                  subtitle={props.displaySubtitle}
+                  subtitleComponent={props.subtitleComponent}
+                  className={props.legendClassName} />
+              )}
 
               {props.children}
 
@@ -79,5 +80,6 @@ interface Props {
   popLink?: string,
   popClick?: () => void,
   lesserContentPadding?: boolean,
-  children: React.ReactElement
+  children: React.ReactElement,
+  popReference?: string
 }

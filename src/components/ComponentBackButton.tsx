@@ -2,32 +2,36 @@ import React from 'react';
 import { ArrowLeft } from 'components';
 import { LinkWrapper } from './LinkWrapper';
 
-export const ComponentBackButton: React.FC<{ link?: string, onClick?: () => void }>
-    = ({ link, onClick }) => {
+export const ComponentBackButton: React.FC<Props> = ({ link, onClick, popReference }) => {
 
-        return (
+    return (
 
-            <div className='component-header-back-button-holder'>
+        <div className='component-header-back-button-holder'>
 
-                <LinkWrapper link={link}>
+            <LinkWrapper link={link}>
 
-                    <div
-                        className='component-header-back-button'
-                        tabIndex={0}
-                        role={"button"}
-                        onClick={() => onClick && onClick()}
-                    >
+                <div
+                    className='component-header-back-button'
+                    tabIndex={0}
+                    role={"button"}
+                    onClick={() => onClick && onClick()}
+                >
 
-                        <div dangerouslySetInnerHTML={{ __html: ArrowLeft }} />
+                    <div dangerouslySetInnerHTML={{ __html: ArrowLeft }} />
 
-                        <p className="color-secondary"> Back </p>
+                    <p className="color-secondary"> Back {popReference ? `to ${popReference}` : ''} </p>
 
-                    </div >
+                </div >
 
-                </LinkWrapper>
+            </LinkWrapper>
 
-            </div>
+        </div>
 
-        )
-    }
+    )
+}
 
+interface Props {
+    popReference?: string,
+    link?: string,
+    onClick?: () => void
+}

@@ -287,6 +287,16 @@
   }
 
   &-legend {
+
+    @include media-query(mobile) {
+
+      flex-direction: column;
+
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 40px;
 
     h2 {
