@@ -1,0 +1,17 @@
+.view-formatter {
+
+    &-label {
+
+        @include font-size(x-small);
+        margin-top: 8px;
+        font-weight: 300;
+
+    }
+
+    &-value {
+
+        @include font-size(regular);
+
+    }
+
+}

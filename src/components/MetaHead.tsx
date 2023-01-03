@@ -49,7 +49,7 @@ export const MetaHead: React.FC<Props> = ({ title = "Lendsqr" }) => {
         <meta property="twitter:image" content={logo} />
       </Head>
 
-      <link href={'fonts/style.css'} rel="stylesheet" />
+      <link href={'/fonts/style.css'} rel="stylesheet" />
 
       <link
         rel="stylesheet"

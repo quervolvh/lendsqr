@@ -1,4 +1,4 @@
-import { ActivateUserIcon, ActiveUsersIcons, BlackListUserIcon, CardsUsersIcon, EyeIcon, Pagination, SmallSummaryCard, TableOptionItem, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
+import { ActivateUserIcon, ActiveUsersIcons, BlackListUserIcon, CardsUsersIcon, EyeIcon, GolderStar, Pagination, SmallSummaryCard, TableOptionItem, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
 import { ComponentFilter } from 'components/Filters/ComponentFilter';
 import { OptionsInput } from 'components/FormField/OptionInput';
 import { Table } from 'components/Table';

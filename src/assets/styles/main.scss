@@ -23,9 +23,11 @@
 @import "components/date-filter";
 @import "components/form-field/index";
 @import "components/form-field/select";
+@import "components/item-type-toggle";
 @import "components/summary-card";
 @import "components/table";
 @import "components/table/pagination";
+@import "components/view-formatter";
 
 //6. Layout
 @import "layout/LandingLayout";

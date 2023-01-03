@@ -29,13 +29,19 @@ export const SmallSummaryCard: React.FC<Props> = ({
             }
 
 
-            <div className="summary-card-info">
+            {
+                
+                
+                <div className="summary-card-info">
 
                 {label && <p> {label} </p>}
 
                 {value && <h2> {value} </h2>}
 
             </div>
+            
+            
+            }
 
 
         </div>
