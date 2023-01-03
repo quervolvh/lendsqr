@@ -1,7 +1,7 @@
 import React from 'react';
-import MainLayoutSideNav from './MainLayoutSideNav';
-import MainLayoutHeader from './MainLayoutHeader';
-import MainLayoutLegend from './MainLayoutLegend';
+import { MainLayoutSideNav } from './MainLayoutSideNav';
+import { MainLayoutHeader } from './MainLayoutHeader';
+import { MainLayoutLegend } from './MainLayoutLegend';
 import { MetaHead , ComponentBackButton } from 'components';
 import { classnames } from 'utils';
 

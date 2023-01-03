@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, JSXElementConstructor } from 'react';
+import React, { useState, useRef, JSXElementConstructor } from 'react';
 import { useOnClickOutside } from 'hooks/useOnClickOutside';
 import { FormField } from '../index';
 import { ReactElement } from 'react';
@@ -161,16 +161,6 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
     const placeHolderStatus = displayOutput(true);
 
     useOnClickOutside(ref, () => !outsideEscape ? null : createChange(false, "showOptions"));
-
-    useEffect(() => {
-
-        if (typeof window !== "undefined") {
-
-            document && document?.getElementById?.('pop-')?.scrollIntoView({ behavior: "smooth" });
-
-        }
-
-    }, [showOptions]);
 
     return (
         <div

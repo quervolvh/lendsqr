@@ -2,7 +2,7 @@ import React from 'react';
 import { MainLayoutFullHeader } from './MainLayoutFullHeader';
 import { MainLayoutMobileHeader } from './MainLayoutMobileHeader';
 
-const MainLayoutHeader: React.FC<Props> = ({ isMobile, deviceWidth, active, title }): JSX.Element => {
+export const MainLayoutHeader: React.FC<Props> = ({ isMobile, deviceWidth, active, title }): JSX.Element => {
 
     return (
         <>
@@ -22,8 +22,6 @@ const MainLayoutHeader: React.FC<Props> = ({ isMobile, deviceWidth, active, titl
         </>
     )
 }
-
-export default MainLayoutHeader;
 
 interface Props {
     isMobile: boolean,

@@ -13,7 +13,11 @@ export const MainLayoutFullHeader: React.FC<Props> = ({ avatar, title }) => {
 
         <div className="main-layout-topBar-company-box">
 
-          <img src={images.lendsqr} alt={"Lendsqr"} />
+          <LinkWrapper link='/'>
+
+            <img src={images.lendsqr} alt={"Lendsqr"} />
+
+          </LinkWrapper>
 
         </div>
 
@@ -41,7 +45,7 @@ export const MainLayoutFullHeader: React.FC<Props> = ({ avatar, title }) => {
 
         />
 
-        <MainLayoutUserBox  avatar={avatar} title={title} />
+        <MainLayoutUserBox avatar={avatar} title={title} />
 
       </div>
 

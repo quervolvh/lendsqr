@@ -1,7 +1,7 @@
 import React from 'react';
 import { classnames } from 'utils';
 
-const MainLayoutLegend: React.FC<props> = ({ title, subtitle, subtitleComponent , className }) => {
+export const MainLayoutLegend: React.FC<props> = ({ title, subtitle, subtitleComponent , className }) => {
 
     return (
         <>
@@ -26,8 +26,6 @@ const MainLayoutLegend: React.FC<props> = ({ title, subtitle, subtitleComponent 
     )
 
 }
-export default MainLayoutLegend;
-
 interface props {
     title?: string,
     subtitle?: string,

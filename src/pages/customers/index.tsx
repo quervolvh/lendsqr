@@ -16,11 +16,15 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
     data: customerType[],
 
+    error: boolean
+
   }>({
 
     loading: true,
 
     data: [],
+
+    error: false
 
   });
 
@@ -32,11 +36,17 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
 
     dispatcher: () => (
 
-      fetch("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users", { method: "GET" })
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users`, { method: "GET" })
 
         .then(item => item?.json())
 
-        .catch(() => console.log("error")
+        .catch(() => setState((prevState) => ({
+
+          ...prevState,
+
+          error: true
+
+        }))
 
         )
     ),
@@ -70,6 +80,8 @@ export const Customers: React.FC<Props> = ({ isMobile, deviceWidth }) => {
             isMobile={isMobile}
 
             deviceWidth={deviceWidth}
+
+            error={state.error}
 
           />
 

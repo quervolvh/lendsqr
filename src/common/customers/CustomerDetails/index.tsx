@@ -19,17 +19,17 @@ export const CustomerDetails: React.FC<Props> = ({ id }) => {
 
     });
 
+    const mainLayoutBody = document?.getElementsByClassName("main-layout-page-content");
+
     useFetching({
 
         dispatcher: () => (
 
-            fetch(`https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${id}`, { method: "GET" })
+            fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/${id}`, { method: "GET" })
 
                 .then(item => item?.json())
 
-                .catch(() => console.log("error")
-
-                )
+                .catch(() => ({}))
         ),
 
         setter: (e) => {
@@ -50,6 +50,18 @@ export const CustomerDetails: React.FC<Props> = ({ id }) => {
 
     useEffect(() => {
 
+        if (mainLayoutBody?.[0]) {
+
+            mainLayoutBody?.[0]?.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
         const item = localStorage?.getItem(`customer-${id}`);
 
         if (item) {
@@ -58,17 +70,17 @@ export const CustomerDetails: React.FC<Props> = ({ id }) => {
 
                 const parsedItem = JSON.parse(item);
 
-                if ( parsedItem?.id ) {
-                    
-                    setState((prevState)=> ({ ...prevState , customer: parsedItem, loading: false }))
-                
+                if (parsedItem?.id) {
+
+                    setState((prevState) => ({ ...prevState, customer: parsedItem, loading: false }))
+
                 }
 
-            } catch (e ) {}
+            } catch (e) { }
 
         }
 
-    // eslint-disable-next-line
+        // eslint-disable-next-line
     }, []);
 
     return (

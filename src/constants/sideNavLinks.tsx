@@ -19,18 +19,40 @@ import {
     FeesAndPricingIcon,
     AuditLogsIcons,
     SystemMessagesIcon,
+    DashboardIcon,
 } from 'components';
 
 type sideNavBlockItemType = {
-    title: string,
-    link: string,
-    type?: "logout" | "side-nav-item-block",
+    title?: string,
+    link?: string,
+    type?: "dashboard" | "side-nav-item-block",
     links: {
         title: string,
         icon: string,
         link: string,
     }[]
 };
+
+const dashboardBlock: sideNavBlockItemType = {
+
+    title: "",
+
+    link: "",
+
+    type: "side-nav-item-block",
+
+    links: [
+
+        {
+            title: "Dashboard",
+            icon: DashboardIcon,
+            link: "/customers"
+
+        },
+
+    ]
+
+}
 
 
 const customerBlock: sideNavBlockItemType = {
@@ -225,6 +247,8 @@ const settingsBlock: sideNavBlockItemType = {
 
 
 export const SIDENAVLINKS: sideNavBlockItemType[] = [
+
+    dashboardBlock,
 
     customerBlock,
 

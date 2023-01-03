@@ -35,6 +35,8 @@ interface Props {
 
     loading: boolean,
 
-    data: customerType[]
+    data: customerType[],
+
+    error: boolean
 
 }

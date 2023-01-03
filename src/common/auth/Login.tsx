@@ -1,7 +1,10 @@
 import { Button } from 'components'
 import { FormField } from 'components/FormField'
+import { useRouter } from 'next/router'
 
 export const Login: React.FC = () => {
+
+    const router = useRouter();
 
     return (
 
@@ -29,7 +32,7 @@ export const Login: React.FC = () => {
 
                 </p>
 
-                <Button label='LOG IN' />
+                <Button label='LOG IN' onClick={()=> router.push("/customers")} />
 
             </div>
 
