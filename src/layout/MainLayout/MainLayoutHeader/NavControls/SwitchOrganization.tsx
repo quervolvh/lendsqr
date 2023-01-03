@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowDown, LinkWrapper, LogoutIcon } from "components";
+import { ArrowDown, LinkWrapper, LogoutIcon, OrganizationIcon } from "components";
 
 export const SwitchOrganization = () => {
 
@@ -16,7 +16,7 @@ export const SwitchOrganization = () => {
 
                     <div
 
-                        dangerouslySetInnerHTML={{ __html: LogoutIcon }}
+                        dangerouslySetInnerHTML={{ __html: OrganizationIcon }}
 
                         className="bulb"
 
