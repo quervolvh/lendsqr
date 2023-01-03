@@ -77,7 +77,7 @@ export const dateDifference = (date1: Date, date2: Date) => {
 
 }
 
-export const DD_MM_YY_HH_mm_a = (date_: string) => dayjs(new Date(safariDateFix(date_))).format("DD/MM/YYYY - HH:mm:a")
+export const DD_MM_YY_HH_mm_a = (date_: string) => dayjs(new Date(safariDateFix(date_))).format("MMM DD, YYYY HH:mm A")
 
 export const timeIntervalGenerator = (start: number, separator: number) => {
 
