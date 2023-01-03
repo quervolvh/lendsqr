@@ -48,11 +48,11 @@ export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty,
         <li className='pagination-pages'>
 
             <li
-                onClick={() => clickHer(page - 1)}
+                onClick={() => page === 1 ? null : clickHer(page - 1)}
                 role={"button"}
                 className='pagination-nav'
                 tabIndex={0}>
-                <i className={classnames( page === 1 && "inactive" , 'fas fa-chevron-left')} />
+                <i className={classnames( page === 1 && "inactive" , 'fa-solid fa-chevron-left')} />
             </li>
 
             <ul>
@@ -114,11 +114,11 @@ export const PaginationPages: React.FC<Props> = ({ pages, page, isMobile, empty,
 
             {page !== pages && !pages_.includes(page) && (
                 <li
-                    onClick={() => clickHer(page + 1)}
+                    onClick={() => (Number(page) !== Number(pages)) ? clickHer(page + 1) : null}
                     className='pagination-nav'
                     role={"button"}
                     tabIndex={0}>
-                    <i className={classnames( page === pages && "inactive" , "fas fa-chevron-right")} />{' '}
+                    <i className={classnames( page === pages && "inactive" , "fa-solid fa-chevron-right")} />{' '}
                 </li>
             )}
 

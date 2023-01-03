@@ -2,14 +2,14 @@ import React from 'react';
 import Head from 'next/head';
 
 export const MetaHead: React.FC<Props> = ({ title = "Lendsqr" }) => {
-  
+
   const titleString = `${title || "Lendsqr"}`;
-  
+
   const description = `Our Lending-as-a-Service solution powers lenders to launch in the shortest possible time, and scale their digital 
   lending business across multiple channels, at the lowest cost.`;
 
   const link = 'http://lendsqr.com';
-  
+
   const logo = 'https://res.cloudinary.com/dsrsn7qj5/image/upload/v1672309672/lendsqr/android-chrome-512x512_bcvgix.png';
 
   const seoAttributes = `{
@@ -49,14 +49,15 @@ export const MetaHead: React.FC<Props> = ({ title = "Lendsqr" }) => {
         <meta property="twitter:image" content={logo} />
       </Head>
 
-      <link href={'/fonts/style.css'} rel="stylesheet" />
-
       <link
         rel="stylesheet"
-        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossOrigin="anonymous"
+        referrerPolicy="no-referrer"
       />
+
+      <link href={'/fonts/style.css'} rel="stylesheet" />
 
       <script>
         {process.env.NEXT_PUBLIC_NODE_ENV !== 'development'

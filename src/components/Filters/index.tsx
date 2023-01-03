@@ -217,7 +217,13 @@ export const Filters: React.FC<Props> = ({ filterOptions, className, onReset }) 
 
                     />
 
-                    <Button label="Done" onClick={() => onSubmit && onSubmit(composeSubmission())} />
+                    <Button label="Done" onClick={() => {
+                        
+                        onSubmit && onSubmit(composeSubmission())
+
+                        setState((prevState)=> ({ ...prevState , showOptions : false }))
+                        
+                    }} />
 
                 </div>
 

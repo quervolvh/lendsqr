@@ -67,6 +67,7 @@
       }
 
       .select-pop {
+
         left: 0;
 
         li {
@@ -76,12 +77,23 @@
     }
 
     .filter-box-selector {
+
+      @include media-query(mobile) {
+
+        position: fixed;
+        top: 64px;
+        left: 12px !important;
+        right: unset !important;
+        margin-right: auto;
+        margin-left: auto;
+
+      }
       
       @include media-query(real-mobile) {
         right: 0;
         margin-top: 26px;
         min-width: 167px;
-        width: 100vw !important;
+        width: 94vw !important;
       }
 
       overflow: scroll !important;
@@ -112,6 +124,7 @@
     }
 
     .form-field .select-pop {
+
       min-width: 230px;
       max-width: 234px;
       max-height: unset;

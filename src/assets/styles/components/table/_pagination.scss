@@ -10,6 +10,13 @@
   margin-top: 20px;
 
   &-flex {
+
+    @include media-query(mobile) {
+
+      flex-direction: column;
+
+    }
+
     display: flex;
     justify-content: space-between;
   }
