@@ -6,7 +6,11 @@ export const MainLayoutSideNav: React.FC<{ active?: string }> = ({ active }) => 
     return (
         <div className="main-layout-sideNav">
 
-            <SideNavContent active={active} />
+            <SideNavContent 
+            
+                active={active} 
+                
+            />
 
         </div>
     );
