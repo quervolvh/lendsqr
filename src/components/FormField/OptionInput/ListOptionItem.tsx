@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-// import { RightIcon, ViewFormatterIconBox } from 'components';
 import { classnames } from 'utils';
 import { LinkWrapper } from 'components/LinkWrapper';
-import { OptionInputItemSelector } from './OptionInputItemSelector';
 
 export const ListOptionItem: React.FC<Props> = ({
 
@@ -11,8 +9,6 @@ export const ListOptionItem: React.FC<Props> = ({
     value,
 
     className = "",
-
-    multiSelect,
 
     selection,
 
@@ -45,14 +41,6 @@ export const ListOptionItem: React.FC<Props> = ({
                 <p> {label || ""} </p>
 
 
-                {/* <ViewFormatterIconBox
-
-                    svgIcon={RightIcon}
-
-                    iconClass='collapsible-icon'
-
-                /> */}
-
             </div>
 
             <span className='view-formatter-span'>
@@ -83,15 +71,7 @@ export const ListOptionItem: React.FC<Props> = ({
 
                                     >
 
-                                        <OptionInputItemSelector
-
-                                            label={typeof item === "string" ? item : item?.label}
-
-                                            multiSelect={multiSelect !== undefined && selection !== undefined}
-
-                                            isSelected={selection?.[parentItem.value] === item.value}
-
-                                        />
+                                     
 
                                     </div>
 

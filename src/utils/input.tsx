@@ -32,7 +32,7 @@ export const mapObjectKeysToLabels = (obj: { [key: string]: { label: string, val
 
     let keyToLabelObj: { [key: string]: string } = {};
 
-    Object.entries(obj).forEach( ([key, val]) =>
+    Object.entries(obj).forEach( ([, val]) =>
 
         keyToLabelObj[val.value] = val.label
 

@@ -351,7 +351,7 @@ export const OptionsInput: React.FC<OptionsInputProp> = (
 
                                             option={item}
 
-                                            value={value}
+                                            value={value as any}
 
                                             multiSelect={props.multiSelect}
 

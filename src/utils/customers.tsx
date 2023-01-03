@@ -96,8 +96,8 @@ export const customerInformationBlock = ( customer?: customerType ) => [
             },
 
             {
-                title: "MONTHLY EMAIL",
-                value: customer?.education?.monthlyIncome
+                title: "MONTHLY INCOME",
+                value: `₦${customer?.education?.monthlyIncome?.[0] || ""} - ₦2${customer?.education?.monthlyIncome?.[1] || ""}`
             },
 
             {

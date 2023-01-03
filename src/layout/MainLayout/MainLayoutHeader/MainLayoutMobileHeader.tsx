@@ -1,13 +1,11 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import { LinkWrapper, MobileHeaderToggler } from 'components';
-import { SIDENAVLINKS } from 'constants/index';
+import {  MobileHeaderToggler } from 'components';
 import { useRouter } from 'next/router';
 import { useOnClickOutside } from 'hooks/useOnClickOutside';
-import { classnames } from 'utils';
 import { SideNavContent } from './NavControls/SideNavContent';
 
-export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX.Element => {
+export const MainLayoutMobileHeader: React.FC<Props> = ({ avatar , active }): JSX.Element => {
 
     const ref: React.MutableRefObject<any> = useRef();
 
@@ -46,7 +44,7 @@ export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX
 
                 <div className="main-layout-header-mobile-links">
 
-                    <SideNavContent />
+                    <SideNavContent active={active} />
 
                 </div>
 

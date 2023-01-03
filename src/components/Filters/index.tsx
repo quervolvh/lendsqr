@@ -192,7 +192,7 @@ export const Filters: React.FC<Props> = ({ filterOptions, className, onReset }) 
 
                                 defaultValue={state.loadQueries?.items?.[item?.value]}
 
-                                value={state?.selection?.[item?.value]}
+                                value={state?.selection?.[item?.value] as any}
 
                             />
 

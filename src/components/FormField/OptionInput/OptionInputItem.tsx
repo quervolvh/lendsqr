@@ -1,7 +1,6 @@
 import React from 'react';
 import { ReactElement } from 'react';
 import { LinkWrapper } from 'components/LinkWrapper';
-import { OptionInputItemSelector } from './OptionInputItemSelector';
 import { ListOptionItem } from './ListOptionItem';
 import { classnames } from 'utils';
 import { objectOptionType } from 'types';
@@ -66,9 +65,9 @@ export const OptionInputItem: React.FC<DisplayOptionProps> = ({
 
         <LinkWrapper
 
-            link={!isObjPrimitive ? optionObject?.link : null}
+            link={!isObjPrimitive ? optionObject?.link : undefined}
 
-            externalLink={!isObjPrimitive ? optionObject?.externalLink : null}
+            externalLink={!isObjPrimitive ? optionObject?.externalLink : undefined}
 
         >
 
@@ -79,20 +78,6 @@ export const OptionInputItem: React.FC<DisplayOptionProps> = ({
                     onClick={(e) => !optionObject.options ? clicker(e) : null}
 
                 >
-
-                    {!Array.isArray(optionObject.options) &&
-
-                        <OptionInputItemSelector
-
-                            multiSelect={!optionObject.options && multiSelect && selection !== undefined}
-
-                            isSelected={selection?.[optionObject?.value] as boolean || false}
-
-                            label={isObjPrimitive ? (props.option as string | number) : optionObject?.label}
-
-                        />
-
-                    }
 
                     {Array.isArray(optionObject.options) &&
 
@@ -136,7 +121,7 @@ interface DisplayOptionProps {
 
     value: string | any[],
 
-    multiSelect: boolean,
+    multiSelect?: boolean,
 
     option: string | ReactElement | objectOptionType | any,
 
