@@ -21,7 +21,9 @@ export type customerType = {
        "lastName":string,
        "phoneNumber":string,
        "gender":string,
-       "address":string
+       "address":string,
+       "email"?: string,
+       "relationship"?: string
     },
     "accountBalance":string,
     "accountNumber":string,

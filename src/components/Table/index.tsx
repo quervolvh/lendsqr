@@ -57,7 +57,7 @@ export const Table: React.FC<TableProps> = (props) => {
 
             <div className="table-component">
 
-                <table className={classnames(props.tableClass)}>
+                <table className={classnames(props.tableClass)} cellSpacing={0}>
 
                     <thead>
 

@@ -105,7 +105,7 @@ export const CustomerOverview: React.FC<Props> = ({ customer, loader }) => {
 
                         <ViewFormatter
 
-                            value={loader ? "" : customer?.accountBalance}
+                            value={loader ? "" : `₦${customer?.accountBalance}`}
 
                             label={loader ? "" : "9912345678/Providus Bank"}
 

@@ -23,13 +23,13 @@
   &.withContextMenu {
     border: 0;
     padding: 0 6px;
-    width: max-content;
-    // background: #e2e8f0;
+    width: 30px;
     background: transparent;
 
     ._menu-selector {
       display: flex;
       align-items: center;
+      margin: auto;
     }
 
     .form-field-title {
@@ -94,7 +94,7 @@
   &-pop {
     z-index: 1;
     position: absolute;
-    top: 55px;
+    top: 16px;
     margin-top: 10px;
     border: 1px solid rgba(84, 95, 125, 0.04);
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);

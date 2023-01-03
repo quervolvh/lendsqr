@@ -1,11 +1,12 @@
-import { ComponentFilter } from 'components/Filters/ComponentFilter';
-import { OptionsInput } from 'components/FormField/OptionInput';
+import React from 'react';
 import { Table } from 'components/Table';
 import { useState } from 'react';
 import { customerType } from 'types';
+import { OptionsInput } from 'components/FormField/OptionInput';
+import { ComponentFilter } from 'components/Filters/ComponentFilter';
 import { DD_MM_YY_HH_mm_a } from 'utils';
-import { ActivateUserIcon, BlackListUserIcon, EyeIcon, Pagination, TableOptionItem } from 'components';
 import { customersFilterOptions } from 'constants/customers';
+import { ActivateUserIcon, BlackListUserIcon, EyeIcon, Pagination, TableOptionItem } from 'components';
 
 export const CustomersListingTable: React.FC<Props> = ({ loading , data , isMobile }) => {
 
@@ -49,7 +50,7 @@ export const CustomersListingTable: React.FC<Props> = ({ loading , data , isMobi
 
                 options={[
 
-                    () => <TableOptionItem svgIcon={EyeIcon} label={"View Details"} />,
+                    () => <TableOptionItem svgIcon={EyeIcon} label={"View Details"} link={`/customers?id=${item?.id}`} />,
 
                     () => <TableOptionItem svgIcon={BlackListUserIcon} label={"Blacklist User"} />,
 

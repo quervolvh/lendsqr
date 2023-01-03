@@ -1,10 +1,17 @@
 .item-type-toggle {
+
+  @include media-query(mobile) {
+
+    overflow-x: scroll;
+
+  }
+
   display: flex;
   justify-content: space-between;
 
   p {
     @include media-query(mobile) {
-      min-width: unset;
+      min-width: max-content;
     }
     @media only screen and (max-width: 300px) {
       font-size: 4vw;

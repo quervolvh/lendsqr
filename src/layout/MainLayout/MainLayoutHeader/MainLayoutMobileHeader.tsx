@@ -7,9 +7,9 @@ import { useOnClickOutside } from 'hooks/useOnClickOutside';
 import { classnames } from 'utils';
 
 export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX.Element => {
-    
+
     const ref: React.MutableRefObject<any> = useRef();
-    
+
     const [isExpanded, setIsExpanded] = useState(false);
 
     const router = useRouter();
@@ -49,14 +49,12 @@ export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX
 
                         {SIDENAVLINKS.map((item, index) => {
 
-                            const activeItem = active?.toLocaleLowerCase() || "";
-
-                            const isActive = `/${activeItem}` === String(item.link).toLowerCase();
+                            const activeLink = active?.toLocaleLowerCase() || "";
 
                             return (
 
                                 <div
-                                    className={classnames("main-layout-sideNav-item", isActive && "active")}
+                                    className={classnames("main-layout-sideNav-item")}
                                     key={`side-nav-item-${index}`}>
 
                                     {item.title && item.type === "side-nav-item-block" &&
@@ -65,30 +63,31 @@ export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX
 
                                             <LinkWrapper link={item.link}>
 
-                                                <p className='"main-layout-sideNav-item-block-title'> {item.title} </p>
+                                                <p className='main-layout-sideNav-item-block-title'> {item.title} </p>
 
                                             </LinkWrapper>
 
                                             <div className='main-layout-sideNav-item-block-links'>
 
-                                                {item.links.map((item) =>
+                                                {item.links.map((link_item) =>
 
                                                     <LinkWrapper
-                                                        className={isActive ? 'active' : ''}
-                                                        link={item.link === "/logout" ? '' : item.link}
-                                                        key={`side-nav-item-${index}-${item.title}`}
+                                                        className={`/${activeLink}` === link_item.link ? 'active' : ''}
+                                                        link={item.link === "/logout" ? '' : link_item.link}
+                                                        key={`side-nav-item-${index}-${link_item.title}`}
                                                     >
+
                                                         <>
 
                                                             <div
 
-                                                                dangerouslySetInnerHTML={{ __html: item.icon }}
+                                                                dangerouslySetInnerHTML={{ __html: link_item.icon }}
 
                                                                 className="bulb"
 
                                                             />
 
-                                                            <span> {item.title} </span>
+                                                            <span> {link_item.title} </span>
 
                                                         </>
 
@@ -103,9 +102,7 @@ export const MainLayoutMobileHeader: React.FC<Props> = ({ active, avatar }): JSX
                                     }
 
                                 </div>
-
                             )
-
                         })}
 
                     </div>
