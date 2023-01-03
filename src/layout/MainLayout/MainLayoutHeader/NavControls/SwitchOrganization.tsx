@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowDown, LinkWrapper, LogoutIcon, OrganizationIcon } from "components";
+import { ArrowDown, LinkWrapper, OrganizationIcon } from "components";
 
 export const SwitchOrganization = () => {
 
