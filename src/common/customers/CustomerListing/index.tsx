@@ -1,25 +1,36 @@
+import { EmptyHistory } from "components/EmptyHistory";
 import React from "react";
 import { customerType } from "types";
 import { CustomersListingSummary } from "./CustomersListingSummary";
 import { CustomersListingTable } from "./CustomersListingTable";
 
-export const CustomersListing: React.FC<Props> = ({ isMobile , loading, data }) => {
+export const CustomersListing: React.FC<Props> = ({ isMobile, loading, data, error }) => {
 
     return (
 
         <>
 
-            <CustomersListingSummary />
+            <CustomersListingSummary loading={error || loading} />
 
-            <CustomersListingTable
+            {!error &&
 
-                data={data}
+                <>
 
-                loading={loading}
+                    <CustomersListingTable
 
-                isMobile={isMobile}
+                        data={data}
 
-            />
+                        loading={loading}
+
+                        isMobile={isMobile}
+
+                    />
+
+                </>
+
+            }
+
+            {error && <EmptyHistory />}
 
         </>
 

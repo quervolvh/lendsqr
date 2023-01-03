@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActiveUsersIcons, CardsUsersIcon, SmallSummaryCard, UsersOnLoanIcons, UserWithSavingsIcons } from 'components';
 
-export const CustomersListingSummary: React.FC = ({ }) => {
+export const CustomersListingSummary: React.FC<Props> = ({ loading }) => {
 
     const summaryData = [
 
@@ -59,6 +59,14 @@ export const CustomersListingSummary: React.FC = ({ }) => {
 
                     {...item}
 
+                    {...loading ? {
+
+                        value: "...."
+
+                    } :
+
+                        {}}
+
                 />
 
             )}
@@ -69,3 +77,9 @@ export const CustomersListingSummary: React.FC = ({ }) => {
 
 }
 
+
+interface Props {
+
+    loading?: boolean
+
+}

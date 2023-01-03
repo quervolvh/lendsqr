@@ -11,11 +11,11 @@ export const CustomerDetails: React.FC<Props> = ({ id }) => {
 
         customer?: customerType,
 
+        error?: boolean
+
     }>({
 
         loading: true,
-
-        // customer: localStorage?.getItem("customer")?.id === id ? (localStorage?.getItem("customer") as unknown as customerType) : undefined
 
     });
 
@@ -29,7 +29,7 @@ export const CustomerDetails: React.FC<Props> = ({ id }) => {
 
                 .then(item => item?.json())
 
-                .catch(() => ({}))
+                .catch(() =>({}))
         ),
 
         setter: (e) => {
@@ -39,6 +39,10 @@ export const CustomerDetails: React.FC<Props> = ({ id }) => {
                 setState((prevState) => ({ ...prevState, loading: false, customer: e }))
 
                 localStorage.setItem(`customer-${id}`, JSON.stringify(e))
+
+            } else {
+
+                setState((prevState)=> ({...prevState , error: true}))
 
             }
 
@@ -91,6 +95,8 @@ export const CustomerDetails: React.FC<Props> = ({ id }) => {
             customer={state?.customer}
 
             loading={state.loading}
+
+            error={!state?.customer?.id && state.error === true}            
 
         />
 

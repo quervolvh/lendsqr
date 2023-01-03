@@ -3,22 +3,26 @@ import { customerType } from 'types';
 import { CustomerOverview } from 'common/customers/CustomerOverview.tsx/CustomerOverview';
 import { ViewFormatter } from 'components';
 import { customerInformationBlock } from 'utils/customers';
+import { EmptyHistory } from 'components/EmptyHistory';
 
-export const CustomerDetailsEntry: React.FC<Props> = ({ customer , loading }) => {
+export const CustomerDetailsEntry: React.FC<Props> = ({ customer, loading, error }) => {
 
     return (
 
-            <>
+        <>
 
-                <CustomerOverview
+            <CustomerOverview
 
-                    customer={customer}
+                customer={customer}
 
-                    loader={loading}
+                loader={loading}
 
-                />
+            />
+
+            {!error &&
 
                 <div className='customers-details'>
+
 
                     {customerInformationBlock(customer)?.map((item) => (
 
@@ -50,10 +54,14 @@ export const CustomerDetailsEntry: React.FC<Props> = ({ customer , loading }) =>
 
                     ))}
 
-
                 </div>
 
-            </>
+            }
+
+
+            {error && <EmptyHistory />}
+
+        </>
 
     )
 
@@ -63,6 +71,8 @@ interface Props {
 
     customer?: customerType,
 
-    loading: boolean
+    loading: boolean,
+
+    error: boolean
 
 }
