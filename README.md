@@ -1,13 +1,13 @@
 # lendsqr
 Lendsqr frontend assessment
 
-Accessment requirement ensured building of codebase using React , Typescript and SCSS.
+Assessment requirement ensured building of codebase using React , Typescript and SCSS.
 
 Hence, Choice of React Framework used in this project is **Next.JS**.
 
 Next.Js was chosen due to its completeness as a Framework. It has its own Router, performs SSR , uses file structure routing e.t.c
 
-Link to project is : [lendsqr accessment](https://adeyemi-awwal-lendsqr-fe-test.vercel.app/) 
+Link to project is : [lendsqr assessment](https://adeyemi-awwal-lendsqr-fe-test.vercel.app/) 
 
 Routes:
 
