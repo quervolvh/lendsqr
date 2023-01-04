@@ -29,7 +29,7 @@ export const LandingLayout: React.FC<Props> = ({
 
                         alt={"Sign up"}
 
-                        className={"LandingLayout-lendsqr"}
+                        className={"LandingLayout-lendsqr strickFadeIn"}
 
                         placeholder={"blur"}
 
@@ -45,7 +45,7 @@ export const LandingLayout: React.FC<Props> = ({
 
                     <Image
 
-                        className='LandingLayout-banner'
+                        className='LandingLayout-banner strickFadeIn'
 
                         src={images.lendsqr_landing}
 

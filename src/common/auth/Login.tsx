@@ -8,7 +8,7 @@ export const Login: React.FC = () => {
 
     return (
 
-        <div className='auth'>
+        <div className='auth strickFadeIn'>
 
             <h1 className='auth-title'> Welcome! </h1>
 
