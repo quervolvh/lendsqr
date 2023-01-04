@@ -9,7 +9,7 @@ export const LogOut = () => {
 
             <LinkWrapper
                 className='active'
-                link={"/logout"}
+                link={"/"}
             >
 
                 <>

@@ -9,7 +9,7 @@ export const SwitchOrganization = () => {
 
             <LinkWrapper
                 className='active'
-                link={"/logout"}
+                link={"/customers"}
             >
 
                 <>
